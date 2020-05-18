@@ -13,6 +13,8 @@ public class PlayerHeatlh : MonoBehaviour, IHealth, IDealWithResources
     private HealthbarController healthController;
     private TextMeshProUGUI healthText;
     private _Resources resources;
+
+    //Todo : User UpgradePlayerHealth instead of these
     [SerializeField] private int goldCost = 5;
     [SerializeField] private int manaCost = 5;
     [SerializeField] private int frostCost = 5;

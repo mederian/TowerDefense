@@ -97,7 +97,7 @@ public class StructureBuilder : MonoBehaviour, IDealWithResources
     //This function initiateing structure creation
     public void CreateStructure(GameObject structure)
     {
-        //Debug.Log("CREATE STRUCTURE");
+        Debug.Log("CREATE STRUCTURE");
         currentConstruction = Instantiate(structure, MousePosition(), Quaternion.identity);
         currentConstruction.GetComponent<Tower>().InjectResources(resources);
         isUnderConstruction = true;

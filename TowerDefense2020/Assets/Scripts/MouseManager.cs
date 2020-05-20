@@ -26,6 +26,7 @@ public class MouseManager : MonoBehaviour
                 Debug.Log("Mouse clicked");
                 GameObject hitObject = hit.collider.gameObject;
                 //This object is clickable
+                Debug.Log(hitObject.name.ToString());
                 if(hitObject.GetComponent<Clickable>() != null){
                     //hitObject.GetComponent<Clickable>().ToggleClick();
                     //lastClicked = hitObject;
@@ -43,7 +44,7 @@ public class MouseManager : MonoBehaviour
                         hit.collider.GetComponentInParent<Clickable>().ToggleClick();
                     }
                     lastClicked = hit.collider.gameObject;
-                    //Debug.Log("Tower has been Clicked!!");
+                    Debug.Log("Tower has been Clicked!!");
                 }
                 else
                 {

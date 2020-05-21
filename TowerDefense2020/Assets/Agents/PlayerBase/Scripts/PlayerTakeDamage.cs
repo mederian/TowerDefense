@@ -15,6 +15,10 @@ public class PlayerTakeDamage : MonoBehaviour, IDamageable
             //enemyScore.GameObject.GetComponent
             enemyScore.GameObject.GetComponent<IDamageable>().TakeDamage(spikeDamage, null);
         }
+        if (GetComponent<HitHighlighter>() != null)
+        {
+            GetComponent<HitHighlighter>().BeginHitFlash();
+        }
         return true;
     }
 

@@ -27,9 +27,9 @@ public class EnemyHealth : MonoBehaviour, IHealth
                 enemyFloatingText.GenerateScoreText(amount, initDamage);
             }
         }
-        if(GetComponent<EnemyHitHighlighter>() != null)
+        if(GetComponent<HitHighlighter>() != null)
         {
-            GetComponent<EnemyHitHighlighter>().BeginHitFlash();
+            GetComponent<HitHighlighter>().BeginHitFlash();
         }
         
         if (currentHP <= 0)

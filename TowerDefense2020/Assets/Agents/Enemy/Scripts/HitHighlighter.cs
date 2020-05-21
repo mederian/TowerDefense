@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyHitHighlighter : MonoBehaviour
+public class HitHighlighter : MonoBehaviour
 {
     [SerializeField] private Material selectedMaterial;     //If this enemy is targeted by tower, change color
     private Material originalMaterial;                      //The object material

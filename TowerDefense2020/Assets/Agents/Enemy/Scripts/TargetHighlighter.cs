@@ -12,7 +12,7 @@ public class TargetHighlighter : MonoBehaviour
 
     void Start()
     {
-        meshObject = this.GetComponent<PlayerBase>().MeshObject;
+        meshObject = this.GetComponent<IAgent>().MeshObject;
         if (meshObject.GetComponent<MeshRenderer>() != null) originalMaterial = meshObject.GetComponent<MeshRenderer>().material;    //Make sure right standard material is selected
     }
 
@@ -31,4 +31,6 @@ public class TargetHighlighter : MonoBehaviour
         meshObject.GetComponent<MeshRenderer>().material = originalMaterial;
         IsTargeted = false;
     }
+
+
 }

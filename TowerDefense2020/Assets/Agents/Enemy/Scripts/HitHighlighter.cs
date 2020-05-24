@@ -14,7 +14,7 @@ public class HitHighlighter : MonoBehaviour
 
     void Start()
     {
-        meshObject = this.GetComponent<PlayerBase>().MeshObject;
+        meshObject = this.GetComponent<IAgent>().MeshObject;
         if (meshObject.GetComponent<MeshRenderer>() != null) originalMaterial = meshObject.GetComponent<MeshRenderer>().material;    //Make sure right standard material is selected
     }
 

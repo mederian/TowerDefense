@@ -4,15 +4,10 @@ using UnityEngine;
 
 public class PlayerBase : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private GameObject meshObject;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public GameObject MeshObject { get => meshObject; set => meshObject = value; }
+    // Start is called before the first frame update
+
+
 }

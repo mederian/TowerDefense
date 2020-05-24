@@ -9,12 +9,13 @@ public class HitHighlighter : MonoBehaviour
     [SerializeField] private float initTimer = 0.2f;
     private float countDownMultiplier = 2;
     private float timer;
-
+    private GameObject meshObject;
     // Start is called before the first frame update
 
     void Start()
     {
-        if (this.GetComponent<MeshRenderer>() != null) originalMaterial = this.GetComponent<MeshRenderer>().material;    //Make sure right standard material is selected
+        meshObject = this.GetComponent<PlayerBase>().MeshObject;
+        if (meshObject.GetComponent<MeshRenderer>() != null) originalMaterial = meshObject.GetComponent<MeshRenderer>().material;    //Make sure right standard material is selected
     }
 
     // Update is called once per frame
@@ -35,7 +36,7 @@ public class HitHighlighter : MonoBehaviour
     public void BeginHitFlash()
     {
         Debug.Log("Start HIT FLASH- " + gameObject.name.ToString() + " -");
-        this.GetComponent<MeshRenderer>().material = selectedMaterial;
+        meshObject.GetComponent<MeshRenderer>().material = selectedMaterial;
         timer = initTimer;
     }
 
@@ -48,7 +49,7 @@ public class HitHighlighter : MonoBehaviour
         }
         else
         {
-            this.GetComponent<MeshRenderer>().material = originalMaterial;
+            meshObject.GetComponent<MeshRenderer>().material = originalMaterial;
         }
         
         timer = 0;

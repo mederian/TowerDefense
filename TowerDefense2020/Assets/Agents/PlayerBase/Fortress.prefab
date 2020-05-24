@@ -20,6 +20,7 @@ GameObject:
   - component: {fileID: 8750461071055442092}
   - component: {fileID: 1160414110504191459}
   - component: {fileID: 5049190764243082721}
+  - component: {fileID: 5663335544345914293}
   m_Layer: 0
   m_Name: Fortress
   m_TagString: Untagged
@@ -37,7 +38,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1114401063356502672}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -86,6 +88,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0343b5f86b4dd5f4686498cc94b8b549, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  meshObject: {fileID: 4119804116584652931}
 --- !u!114 &3001178199813279796
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -205,3 +208,83 @@ MonoBehaviour:
   frostCost: 5
   poisonCost: 5
   fireCost: 5
+--- !u!114 &5663335544345914293
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6393895529329395432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6523cde05d6d4e84a801e12fcc814570, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectedMaterial: {fileID: 0}
+--- !u!1001 &5336080641596799370
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 7989658157510423803}
+    m_Modifications:
+    - target: {fileID: -4216859302048453862, guid: ec7254cf45dc58a4584b2a52c2920516, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: ec7254cf45dc58a4584b2a52c2920516, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: ec7254cf45dc58a4584b2a52c2920516, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: ec7254cf45dc58a4584b2a52c2920516, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: ec7254cf45dc58a4584b2a52c2920516, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: ec7254cf45dc58a4584b2a52c2920516, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: ec7254cf45dc58a4584b2a52c2920516, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: ec7254cf45dc58a4584b2a52c2920516, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: ec7254cf45dc58a4584b2a52c2920516, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: ec7254cf45dc58a4584b2a52c2920516, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: ec7254cf45dc58a4584b2a52c2920516, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: ec7254cf45dc58a4584b2a52c2920516, type: 3}
+      propertyPath: m_Name
+      value: Fortress2
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ec7254cf45dc58a4584b2a52c2920516, type: 3}
+--- !u!1 &4119804116584652931 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: ec7254cf45dc58a4584b2a52c2920516, type: 3}
+  m_PrefabInstance: {fileID: 5336080641596799370}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1114401063356502672 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: ec7254cf45dc58a4584b2a52c2920516, type: 3}
+  m_PrefabInstance: {fileID: 5336080641596799370}
+  m_PrefabAsset: {fileID: 0}

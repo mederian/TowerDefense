@@ -3,13 +3,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bullet : MonoBehaviour {
+public class Bullet : MonoBehaviour, IAgent {
 	public float speed = 15f;
 	private Transform target;
 	private GameObject owner; 
     public IScore scoreData;
+    [SerializeField] GameObject meshObject;
 
     public GameObject GameObject { get { return this.gameObject; } }
+
+    public GameObject MeshObject { get => meshObject; set => meshObject = value; }
 
     public void FixedUpdate()
     {

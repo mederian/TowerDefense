@@ -2,10 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Tower : MonoBehaviour, IDealWithResources
+public class Tower : MonoBehaviour, IDealWithResources, IAgent
 {
     public TowerData towerData;
     private _Resources resources;
+    [SerializeField] GameObject meshObject;
+
+    public GameObject MeshObject { get => meshObject; set => meshObject = value; }
+
     //private ILevel levelData;
 
     private void Start()

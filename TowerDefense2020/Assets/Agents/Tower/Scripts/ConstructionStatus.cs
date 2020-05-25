@@ -10,11 +10,12 @@ public class ConstructionStatus : MonoBehaviour
     private float timer = 0;
 
     public bool BuildComplete { get => buildComplete; set => buildComplete = value; }
+    public GameObject meshObject;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        meshObject = this.GetComponent<Tower>().MeshObject;
     }
 
     // Update is called once per frame
@@ -39,7 +40,7 @@ public class ConstructionStatus : MonoBehaviour
     public void CompleteBuild()
     {
         BuildComplete = true;
-        gameObject.GetComponent<MeshRenderer>().enabled = true;
+        meshObject.GetComponent<MeshRenderer>().enabled = true;
         GetComponent<ConstructionHighlighter>().EndAnimateConstruction();
         //this.GetComponent<CircleSelect>().CreateSelectorMarker();
     }
@@ -47,7 +48,7 @@ public class ConstructionStatus : MonoBehaviour
     public void StartConstruction() 
     {
         buildStarted = true;
-        gameObject.GetComponent<MeshRenderer>().enabled = false;
+        meshObject.GetComponent<MeshRenderer>().enabled = false;
     }
 
     //returns false if not yet constructed

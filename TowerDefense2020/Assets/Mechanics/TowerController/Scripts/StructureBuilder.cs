@@ -94,7 +94,7 @@ public class StructureBuilder : MonoBehaviour, IDealWithResources
         currentConstruction.GetComponent<ConstructionStatus>().StartConstruction();
     }
 
-    //This function initiateing structure creation
+    //This function initiating structure creation
     public void CreateStructure(GameObject structure)
     {
         Debug.Log("CREATE STRUCTURE");

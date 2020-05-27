@@ -64,6 +64,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buildTime: 2
+  meshObject: {fileID: 0}
 --- !u!114 &6928398552131287277
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -389,7 +390,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5553605260426501777}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BulletStart
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -468,6 +469,10 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: 0d12d235e8c2cb9468fb3840bbf19548, type: 3}
       propertyPath: m_Name
       value: Tower5
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 0d12d235e8c2cb9468fb3840bbf19548, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0d12d235e8c2cb9468fb3840bbf19548, type: 3}
@@ -552,6 +557,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: b43cd97fa49769d488efe5af7de91788, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b43cd97fa49769d488efe5af7de91788, type: 3}
 --- !u!1 &4954266046407795497 stripped
@@ -634,6 +643,10 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: b43cd97fa49769d488efe5af7de91788, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: b43cd97fa49769d488efe5af7de91788, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b43cd97fa49769d488efe5af7de91788, type: 3}

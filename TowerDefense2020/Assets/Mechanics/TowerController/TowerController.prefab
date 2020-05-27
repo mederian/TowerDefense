@@ -45,5 +45,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildLayer:
     serializedVersion: 2
-    m_Bits: 567
+    m_Bits: 563
   hitList: {fileID: 6469762472345824467, guid: 418fc552932b5bb48b554e6d4fe4710d, type: 3}

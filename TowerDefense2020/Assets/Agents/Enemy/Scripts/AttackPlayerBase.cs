@@ -25,14 +25,14 @@ public class AttackPlayerBase : MonoBehaviour, IDealDamage
     {
         if(playerBase != null)
         {
-            Debug.Log("Dealt damage: playerbase.Getcomponent<playerTakeDamage>..");
+            //Debug.Log("Dealt damage: playerbase.Getcomponent<playerTakeDamage>..");
             playerBase.GetComponent<PlayerTakeDamage>().TakeDamage(damage, score);
         }
     }
 
     public void StartAttack()
     {
-        Debug.Log("Start Attacking");
+        //Debug.Log("Start Attacking");
         attacking = true;
     }
     void Update()
@@ -44,7 +44,7 @@ public class AttackPlayerBase : MonoBehaviour, IDealDamage
             if(fireCoolDownLeft <= 0)
             {
                 DealDamage(this.damage);
-                Debug.Log("DEAL DAMAGE");
+                //Debug.Log("DEAL DAMAGE");
                 fireCoolDownLeft = fireCoolDown;
             }
         }

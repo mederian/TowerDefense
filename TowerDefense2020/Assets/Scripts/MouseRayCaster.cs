@@ -7,12 +7,6 @@ public class MouseRayCaster : MonoBehaviour
     [SerializeField] private LayerMask buildLayer;
     [SerializeField] private string hitTag;
     private GameObject currentTarget;
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()

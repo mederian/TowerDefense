@@ -23,10 +23,10 @@ public class MouseManager : MonoBehaviour
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(ray, out hit, Mathf.Infinity, buildLayer))
             {
-                Debug.Log("Mouse clicked");
+                //Debug.Log("Mouse clicked");
                 GameObject hitObject = hit.collider.gameObject;
                 //This object is clickable
-                Debug.Log(hitObject.name.ToString());
+                //Debug.Log(hitObject.name.ToString());
                 if(hitObject.GetComponent<Clickable>() != null){
                     //hitObject.GetComponent<Clickable>().ToggleClick();
                     //lastClicked = hitObject;

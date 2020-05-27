@@ -51,12 +51,12 @@ public class PlayerHeatlh : MonoBehaviour, IHealth, IDealWithResources
     {
         float actAmount = this.GetComponent<PlayerArmor>().DamageAfterArmor(amount);
 
-            Debug.Log("main damage:" + amount + "(" + actAmount + ")");
+           // Debug.Log("main damage:" + amount + "(" + actAmount + ")");
             
             this.currentHp -= actAmount;
             healthController.SetHP(currentHp);
             UpdateHealthText();
-            Debug.Log("CurrentHP: " + currentHp.ToString());
+            //Debug.Log("CurrentHP: " + currentHp.ToString());
 
             if (currentHp <= 0)
             {

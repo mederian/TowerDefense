@@ -19,7 +19,7 @@ public class EnemyTakeDamage : MonoBehaviour, IDamageable
     {
         float initDamage = damage;
         float finalDamage = enemyArmor.DamageAfterArmor(damage);
-        Debug.Log("Take Damage");
+        //Debug.Log("Take Damage");
         enemyHealth.LooseHP(finalDamage, initDamage, towerScore);
         if (finalDamage > -1)
         {

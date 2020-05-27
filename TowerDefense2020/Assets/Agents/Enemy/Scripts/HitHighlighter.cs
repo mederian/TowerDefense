@@ -35,7 +35,7 @@ public class HitHighlighter : MonoBehaviour
     //Change material, and start countdown towards changing back to origin material
     public void BeginHitFlash()
     {
-        Debug.Log("Start HIT FLASH- " + gameObject.name.ToString() + " -");
+        //Debug.Log("Start HIT FLASH- " + gameObject.name.ToString() + " -");
         meshObject.GetComponent<MeshRenderer>().material = selectedMaterial;
         timer = initTimer;
     }

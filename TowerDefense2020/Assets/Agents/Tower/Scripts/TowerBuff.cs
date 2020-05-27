@@ -74,10 +74,12 @@ public class TowerBuff : MonoBehaviour, IHandleBuff, IInjectBuffStats
 
     public void RecieveBuff(List<Resource> resources)
     {
+        Debug.Log("RECIEVE BUFF..............................................................");
         //TODO: Extract this to separate script that inherit function from interface
         //Interface handleBuff ... -> handle buff
         if (GetComponent<ConstructionStatus>().IsConstructionComplete())
         {
+            Debug.Log("iscontstuctioncomplete");
             foreach (Resource r in resources)
             {
                 if(r.name == damageBuffResource)

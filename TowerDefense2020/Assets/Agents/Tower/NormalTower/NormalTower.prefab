@@ -173,7 +173,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   towerBuffCooldown: 5
-  buffCap: 0
+  buffCap: 10
+  damageBuffCooldown: 5
+  aoeBuffCooldown: 5
+  slowBuffCooldown: 5
+  dotBuffCooldown: 5
+  rangeBuffCooldown: 5
 --- !u!114 &3625279091742076313
 MonoBehaviour:
   m_ObjectHideFlags: 0

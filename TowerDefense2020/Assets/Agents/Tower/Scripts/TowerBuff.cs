@@ -12,11 +12,11 @@ public class TowerBuff : MonoBehaviour, IHandleBuff, IInjectBuffStats
 
     [SerializeField] private float towerBuffCooldown;
     [SerializeField] private int buffCap = 10;
-    private float damageBuffCooldown;
-    private float aoeBuffCooldown;
-    private float slowBuffCooldown;
-    private float dotBuffCooldown;
-    private float rangeBuffCooldown;
+    [SerializeField] private float damageBuffCooldown;
+    [SerializeField] private float aoeBuffCooldown;
+    [SerializeField] private float slowBuffCooldown;
+    [SerializeField] private float dotBuffCooldown;
+    [SerializeField] private float rangeBuffCooldown;
     private IBuffStats buffData;
 
     //TODO: Create inspector reference to interface for handling the buffs
@@ -38,6 +38,8 @@ public class TowerBuff : MonoBehaviour, IHandleBuff, IInjectBuffStats
         if (damageBuffCooldown > 0)
         {
             damageBuffCooldown -= Time.deltaTime;
+
+            //TODO: if counted down to <= 0 - update detailview
         }
         else if (damageBuffCooldown <= 0 && buffData.BuffDamage > 0)
         {
@@ -84,19 +86,22 @@ public class TowerBuff : MonoBehaviour, IHandleBuff, IInjectBuffStats
             {
                 if(r.name == damageBuffResource)
                 {
+                    Debug.Log("Attempt buff dmg: " + r.value.ToString());
                     int buffValue;
                     int overflow = (int)buffData.BuffDamage;
              
                     if (r.value > buffCap) buffValue = buffCap;
                     else buffValue = r.value;
-
+                    Debug.Log("Buff value1: " + buffValue.ToString());
                     buffValue -= overflow;
 
+                    Debug.Log("Buff value2: " + buffValue.ToString());
                     if(buffValue > 0)
                     {
                         buffData.BuffDamage += buffValue;
                         damageBuffCooldown = towerBuffCooldown;
                         r.value -= buffValue;
+                        Debug.Log("Buffvalue vas over 0");
                     }
  
                 }

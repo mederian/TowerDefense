@@ -50,6 +50,10 @@ public class Bullet : MonoBehaviour, IAgent {
 	void DoBulletHit(){
 
         List<IDamageable> affected = GetComponent<AOE>().AoeHitList();
+        if(affected == null || affected.Count == 0)
+        {
+            Debug.Log("AOE IS NULL OR EMPTY");
+        }
         if(affected.Count > 0)
         {
             GetComponent<BulletDamage>().AffectTargets(affected);

@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 [RequireComponent(typeof(Bullet))]
@@ -8,6 +9,7 @@ public class AOE : MonoBehaviour, IActionBulletHit, IInjectBuffStats, IInjectDam
     private List<IDamageable> aoeHitList = new List<IDamageable>();
     private IBuffStats buffData;
     private IDamageStats damageData;
+    [SerializeField] GameObject model;
 
     private List<IDamageable> AOEHit(){
         List<IDamageable> affected = new List<IDamageable>();
@@ -21,12 +23,13 @@ public class AOE : MonoBehaviour, IActionBulletHit, IInjectBuffStats, IInjectDam
         }
         else if (radius > 0)
         {
-            Collider[] cols = Physics.OverlapSphere(transform.position, radius);
+            Collider[] cols = Physics.OverlapSphere(model.transform.position, radius);
             foreach (Collider c in cols)
             {
-                if (c.GetComponent<IDamageable>() != null)
+                if (c.GetComponentInParent<IDamageable>() != null)
                 {
-                    affected.Add(c.GetComponent<IDamageable>());
+                    
+                    affected.Add(c.GetComponentInParent<IDamageable>());
                 }
             }
         }

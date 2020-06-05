@@ -123,24 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &14584843 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7545048515753255646, guid: cb646044f41ee534b869db8551dd5595, type: 3}
-  m_PrefabInstance: {fileID: 1259929394}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &14584844
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 14584843}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 665d5064fed0a1047b69accbbb1b6f45, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  uiText: {fileID: 686284282}
 --- !u!114 &21680228 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2233455607400165449, guid: d3991ce9e7b8d704a8871f3b421a7214, type: 3}
@@ -465,17 +447,6 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
---- !u!114 &686284282 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8379995510127137479, guid: cb646044f41ee534b869db8551dd5595, type: 3}
-  m_PrefabInstance: {fileID: 1259929394}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &717558715
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -544,101 +515,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 23560712480594025, guid: cb646044f41ee534b869db8551dd5595, type: 3}
-      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1691415902}
-    - target: {fileID: 23560712480594025, guid: cb646044f41ee534b869db8551dd5595, type: 3}
-      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ShowTooltip
-      objectReference: {fileID: 0}
-    - target: {fileID: 23560712480594025, guid: cb646044f41ee534b869db8551dd5595, type: 3}
-      propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1691415902}
-    - target: {fileID: 23560712480594025, guid: cb646044f41ee534b869db8551dd5595, type: 3}
-      propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: HideTooltip
-      objectReference: {fileID: 0}
-    - target: {fileID: 23560712480594025, guid: cb646044f41ee534b869db8551dd5595, type: 3}
-      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: ToolTip, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 23560712480594025, guid: cb646044f41ee534b869db8551dd5595, type: 3}
-      propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: ToolTip, Assembly-CSharp
-      objectReference: {fileID: 0}
     - target: {fileID: 884186082641438132, guid: cb646044f41ee534b869db8551dd5595, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1878562588}
-    - target: {fileID: 884186082641438132, guid: cb646044f41ee534b869db8551dd5595, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: UpgradeSpikeDamage
-      objectReference: {fileID: 0}
-    - target: {fileID: 884186082641438132, guid: cb646044f41ee534b869db8551dd5595, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: UpgradePlayerSpike, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 884186082641438132, guid: cb646044f41ee534b869db8551dd5595, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 884186082641438132, guid: cb646044f41ee534b869db8551dd5595, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 884186082641438132, guid: cb646044f41ee534b869db8551dd5595, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     - target: {fileID: 3335671194125256065, guid: cb646044f41ee534b869db8551dd5595, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1878562592}
-    - target: {fileID: 3335671194125256065, guid: cb646044f41ee534b869db8551dd5595, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: UpgradeStartHP
-      objectReference: {fileID: 0}
-    - target: {fileID: 3335671194125256065, guid: cb646044f41ee534b869db8551dd5595, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: UpgradePlayerHealth, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 3335671194125256065, guid: cb646044f41ee534b869db8551dd5595, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3335671194125256065, guid: cb646044f41ee534b869db8551dd5595, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 3335671194125256065, guid: cb646044f41ee534b869db8551dd5595, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 4437580302622397232, guid: cb646044f41ee534b869db8551dd5595, type: 3}
-      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 14584844}
-    - target: {fileID: 4437580302622397232, guid: cb646044f41ee534b869db8551dd5595, type: 3}
-      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ShowTooltip
-      objectReference: {fileID: 0}
-    - target: {fileID: 4437580302622397232, guid: cb646044f41ee534b869db8551dd5595, type: 3}
-      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: ToolTip, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 4437580302622397232, guid: cb646044f41ee534b869db8551dd5595, type: 3}
-      propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 14584844}
-    - target: {fileID: 4437580302622397232, guid: cb646044f41ee534b869db8551dd5595, type: 3}
-      propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: HideTooltip
-      objectReference: {fileID: 0}
-    - target: {fileID: 4437580302622397232, guid: cb646044f41ee534b869db8551dd5595, type: 3}
-      propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: ToolTip, Assembly-CSharp
+    - target: {fileID: 3483510090616683815, guid: cb646044f41ee534b869db8551dd5595, type: 3}
+      propertyPath: m_Layer
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5456886837479386617, guid: cb646044f41ee534b869db8551dd5595, type: 3}
       propertyPath: m_Name
@@ -648,58 +535,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1878562596}
-    - target: {fileID: 5902196050277513540, guid: cb646044f41ee534b869db8551dd5595, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: UpgradePlayerArmor, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 5902196050277513540, guid: cb646044f41ee534b869db8551dd5595, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: UpgradeArmor
-      objectReference: {fileID: 0}
-    - target: {fileID: 5902196050277513540, guid: cb646044f41ee534b869db8551dd5595, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5902196050277513540, guid: cb646044f41ee534b869db8551dd5595, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5902196050277513540, guid: cb646044f41ee534b869db8551dd5595, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     - target: {fileID: 6524524154269394482, guid: cb646044f41ee534b869db8551dd5595, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 21680228}
-    - target: {fileID: 6524524154269394482, guid: cb646044f41ee534b869db8551dd5595, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: CreateStructure
-      objectReference: {fileID: 0}
-    - target: {fileID: 7249937299154001684, guid: cb646044f41ee534b869db8551dd5595, type: 3}
-      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1370391231}
-    - target: {fileID: 7249937299154001684, guid: cb646044f41ee534b869db8551dd5595, type: 3}
-      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ShowTooltip
-      objectReference: {fileID: 0}
-    - target: {fileID: 7249937299154001684, guid: cb646044f41ee534b869db8551dd5595, type: 3}
-      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: ToolTip, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 7249937299154001684, guid: cb646044f41ee534b869db8551dd5595, type: 3}
-      propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1370391231}
-    - target: {fileID: 7249937299154001684, guid: cb646044f41ee534b869db8551dd5595, type: 3}
-      propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: HideTooltip
-      objectReference: {fileID: 0}
-    - target: {fileID: 7249937299154001684, guid: cb646044f41ee534b869db8551dd5595, type: 3}
-      propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: ToolTip, Assembly-CSharp
-      objectReference: {fileID: 0}
     - target: {fileID: 7574611751938993774, guid: cb646044f41ee534b869db8551dd5595, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -794,35 +633,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cb646044f41ee534b869db8551dd5595, type: 3}
---- !u!114 &1349492762 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2790764938404485266, guid: cb646044f41ee534b869db8551dd5595, type: 3}
-  m_PrefabInstance: {fileID: 1259929394}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!1 &1370391230 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2416108002396012548, guid: cb646044f41ee534b869db8551dd5595, type: 3}
-  m_PrefabInstance: {fileID: 1259929394}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1370391231
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1370391230}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 665d5064fed0a1047b69accbbb1b6f45, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  uiText: {fileID: 1349492762}
 --- !u!1001 &1565267391
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -956,24 +766,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1691415901 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8808163676009114525, guid: cb646044f41ee534b869db8551dd5595, type: 3}
-  m_PrefabInstance: {fileID: 1259929394}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1691415902
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1691415901}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 665d5064fed0a1047b69accbbb1b6f45, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  uiText: {fileID: 1847562768}
 --- !u!1 &1748288002
 GameObject:
   m_ObjectHideFlags: 0
@@ -1066,17 +858,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!114 &1847562768 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7872901135585902481, guid: cb646044f41ee534b869db8551dd5595, type: 3}
-  m_PrefabInstance: {fileID: 1259929394}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1878562588 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5049190764243082721, guid: e1f88757beeebb847b1ef76da7564377, type: 3}

@@ -1,11 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using UnityEditor;
 using UnityEngine;
 
 public class ToolTip : MonoBehaviour
 {
     private ITooltip tooltipData;
+    [SerializeField] ToolTipPanel panel;
     [SerializeField] TextMeshProUGUI uiText;
     private string defaultTooltip = "Tooltip";
 
@@ -21,17 +23,12 @@ public class ToolTip : MonoBehaviour
 
     public void ShowTooltip()
     {
-        if(tooltipData != null)
-        {
-            uiText.text = tooltipData.GetTooltip();
-        }
-        else
-        {
-            uiText.text = defaultTooltip;
-        }
+        panel.ShowPanel();
+
     }   
     public void HideTooltip()
     {
-        uiText.text = "";
+        panel.HidePanel(tooltipData.GoldCost(), tooltipData.FireCost(), tooltipData.FrostCost(), tooltipData.PoisonCost(), tooltipData.ManaCost());
+
     }
 }

@@ -63,4 +63,28 @@ public class FortressTooltip : MonoBehaviour, ITooltip
             playerSpike = fortress.GetComponent<UpgradePlayerSpike>();
     }
 
+    public int GoldCost()
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public int FireCost()
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public int FrostCost()
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public int PoisonCost()
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public int ManaCost()
+    {
+        throw new System.NotImplementedException();
+    }
 }

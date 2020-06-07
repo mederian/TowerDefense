@@ -5,6 +5,7 @@ using UnityEngine;
 public class TowerButtonTooltip : MonoBehaviour, ITooltip
 {
     private string tooltip; //Need the tower cost data to populate this variable
+    private TowerCost towerCost;
     [SerializeField] GameObject towerObject;
     public string GetTooltip()
     {
@@ -13,12 +14,13 @@ public class TowerButtonTooltip : MonoBehaviour, ITooltip
     }
 
 
+
     // Start is called before the first frame update
     void Start()
     {
         if(towerObject.GetComponent<TowerCost>() != null)
         {
-            TowerCost towerCost = towerObject.GetComponent<TowerCost>();
+            towerCost = towerObject.GetComponent<TowerCost>();
             tooltip = "Build Tower";
             tooltip += "(" + towerCost.GoldCost + "G)";
             tooltip += "(" + towerCost.FireCost + "F)";
@@ -31,4 +33,28 @@ public class TowerButtonTooltip : MonoBehaviour, ITooltip
             tooltip = "Build Tower";
         }
     }
+
+
+    public int GoldCost()
+    {
+        return towerCost.GoldCost;
+    }
+    public int FireCost()
+    {
+        return towerCost.FireCost;
+    }
+    public int FrostCost()
+    {
+        return towerCost.FrostCost;
+    }
+    public int PoisonCost()
+    {
+        return towerCost.PoisonCost;
+    }
+    public int ManaCost()
+    {
+        return towerCost.ManaCost;
+    }
+
+
 }

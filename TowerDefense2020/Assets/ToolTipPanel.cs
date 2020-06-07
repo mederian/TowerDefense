@@ -18,9 +18,18 @@ public class ToolTipPanel : MonoBehaviour
     [SerializeField] private Image poisonImage;
     [SerializeField] private Image manaImage;
 
-    public void HidePanel()
+    public void HidePanel(int g, int f, int fr, int p, int m)
     {
-        this.enabled = false;
+        SetGold(g);
+        SetFire(f);
+        SetFrost(fr);
+        SetPoison(p);
+        SetMana(m);
+        this.gameObject.SetActive(false);
+    }
+    public void ShowPanel()
+    {
+        this.gameObject.SetActive(true);
     }
 
     public void SetGold(int value)

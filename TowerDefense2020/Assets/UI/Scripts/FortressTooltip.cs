@@ -5,7 +5,7 @@ using UnityEngine;
 public class FortressTooltip : MonoBehaviour, ITooltip
 {
 
-    private string tooltip = "";
+
     [SerializeField] private GameObject fortress;
     private UpgradePlayerArmor playerArmor;
     private UpgradePlayerHealth playerHealth;
@@ -18,41 +18,11 @@ public class FortressTooltip : MonoBehaviour, ITooltip
     }
     [SerializeField] PropertyType updateType = PropertyType.Heal;
 
-    public string GetTooltip()
-    {
-        if(updateType == PropertyType.Heal)
-        {
-            tooltip = "Upgrade HP";
-            tooltip += "(" + playerHealth.GoldCost + "G)";
-            tooltip += "(" + playerHealth.FireCost + "F)";
-            tooltip += "(" + playerHealth.PoisonCost + "P)";
-            tooltip += "(" + playerHealth.FrostCost + "fr)";
-            tooltip += "(" + playerHealth.ManaCost + "m)";
-        }
-        else if(updateType == PropertyType.Armor)
-        {
-            tooltip = "Upgrade Damage";
-            tooltip += "(" + playerArmor.GoldCost + "G)";
-            tooltip += "(" + playerArmor.FireCost + "F)";
-            tooltip += "(" + playerArmor.PoisonCost + "P)";
-            tooltip += "(" + playerArmor.FrostCost + "fr)";
-            tooltip += "(" + playerArmor.ManaCost + "m)";
-        }
-        else if(updateType == PropertyType.Spikes)
-        {
-            tooltip = "Upgrade Spike";
-            tooltip += "(" + playerSpike.GoldCost + "G)";
-            tooltip += "(" + playerSpike.FireCost + "F)";
-            tooltip += "(" + playerSpike.PoisonCost + "P)";
-            tooltip += "(" + playerSpike.FrostCost + "fr)";
-            tooltip += "(" + playerSpike.ManaCost + "m)";
-        }
-        return tooltip;
-    }
 
     // Start is called before the first frame update
     void Start()
     {
+
         if(fortress.GetComponent<UpgradePlayerArmor>() != null)
             playerArmor = fortress.GetComponent<UpgradePlayerArmor>();
 
@@ -65,26 +35,101 @@ public class FortressTooltip : MonoBehaviour, ITooltip
 
     public int GoldCost()
     {
-        throw new System.NotImplementedException();
+        if (updateType == PropertyType.Heal)
+        {
+            return playerHealth.GoldCost;
+        }
+        else if (updateType == PropertyType.Armor)
+        {
+            return playerArmor.GoldCost;
+        }
+        else if (updateType == PropertyType.Spikes)
+        {
+            return playerSpike.GoldCost;
+        }
+        else
+        {
+            return 0;
+        }
     }
 
     public int FireCost()
     {
-        throw new System.NotImplementedException();
+        if (updateType == PropertyType.Heal)
+        {
+            return playerHealth.FireCost;
+        }
+        else if (updateType == PropertyType.Armor)
+        {
+            return playerArmor.FireCost;
+        }
+        else if (updateType == PropertyType.Spikes)
+        {
+            return playerSpike.FireCost;
+        }
+        else
+        {
+            return 0;
+        }
     }
 
     public int FrostCost()
     {
-        throw new System.NotImplementedException();
+        if (updateType == PropertyType.Heal)
+        {
+            return playerHealth.FrostCost;
+        }
+        else if (updateType == PropertyType.Armor)
+        {
+            return playerArmor.FrostCost;
+        }
+        else if (updateType == PropertyType.Spikes)
+        {
+            return playerSpike.FrostCost;
+        }
+        else
+        {
+            return 0;
+        }
     }
 
     public int PoisonCost()
     {
-        throw new System.NotImplementedException();
+        if (updateType == PropertyType.Heal)
+        {
+            return playerHealth.PoisonCost;
+        }
+        else if (updateType == PropertyType.Armor)
+        {
+            return playerArmor.PoisonCost;
+        }
+        else if (updateType == PropertyType.Spikes)
+        {
+            return playerSpike.PoisonCost;
+        }
+        else
+        {
+            return 0;
+        }
     }
 
     public int ManaCost()
     {
-        throw new System.NotImplementedException();
+        if (updateType == PropertyType.Heal)
+        {
+            return playerHealth.ManaCost;
+        }
+        else if (updateType == PropertyType.Armor)
+        {
+            return playerArmor.ManaCost;
+        }
+        else if (updateType == PropertyType.Spikes)
+        {
+            return playerSpike.ManaCost;
+        }
+        else
+        {
+            return 0;
+        }
     }
 }

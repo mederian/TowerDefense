@@ -72,9 +72,9 @@ MonoBehaviour:
   upgradeArmorModifier: 3.5
   upgradeDMGReductionModifier: 2.5
   goldCost: 5
-  manaCost: 5
+  manaCost: 0
   frostCost: 5
-  poisonCost: 5
+  poisonCost: 0
   fireCost: 5
 --- !u!114 &7880002315456673064
 MonoBehaviour:
@@ -117,9 +117,9 @@ MonoBehaviour:
   currentHp: 100
   goldCost: 5
   manaCost: 5
-  frostCost: 5
-  poisonCost: 5
-  fireCost: 5
+  frostCost: 0
+  poisonCost: 0
+  fireCost: 0
 --- !u!114 &3149042146861864343
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -132,11 +132,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d918c09719d0dea47b14aeb40d09bd30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  goldCost: 5
+  goldCost: 6
   manaCost: 5
-  frostCost: 5
-  poisonCost: 5
-  fireCost: 5
+  frostCost: 0
+  poisonCost: 0
+  fireCost: 2
 --- !u!114 &7160802483491831739
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -203,9 +203,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upgradeSpikeModifier: 2.5
   maximumValue: 100
-  goldCost: 5
+  goldCost: 2
   manaCost: 5
-  frostCost: 5
+  frostCost: 0
   poisonCost: 5
   fireCost: 5
 --- !u!114 &5663335544345914293

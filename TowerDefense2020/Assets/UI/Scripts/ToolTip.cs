@@ -23,12 +23,12 @@ public class ToolTip : MonoBehaviour
 
     public void ShowTooltip()
     {
-        panel.ShowPanel();
+        panel.ShowPanel(tooltipData.GoldCost(), tooltipData.FireCost(), tooltipData.FrostCost(), tooltipData.PoisonCost(), tooltipData.ManaCost());
 
     }   
     public void HideTooltip()
     {
-        panel.HidePanel(tooltipData.GoldCost(), tooltipData.FireCost(), tooltipData.FrostCost(), tooltipData.PoisonCost(), tooltipData.ManaCost());
+        panel.HidePanel();
 
     }
 }

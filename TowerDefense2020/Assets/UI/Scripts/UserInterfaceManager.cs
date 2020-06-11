@@ -7,6 +7,7 @@ public class UserInterfaceManager : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI[] topText;
     [SerializeField] private TextMeshProUGUI mainResourceText;
+    [SerializeField] private GameObject mainResourceIcon;
     [SerializeField] private TextMeshProUGUI aoeResourceText;
     [SerializeField] private TextMeshProUGUI slowResourceText;
     [SerializeField] private TextMeshProUGUI dotResourceText;
@@ -19,7 +20,9 @@ public class UserInterfaceManager : MonoBehaviour
         resourceManager = GetComponent<ResourceManager>();
         //TODO: inject resources into enemycontroller correctly
         //enemyController.GetComponent<EnemyController>().InjectResourceData(this.GetComponent<ResourceManager>().ResourceData());
-        UpdateAllVisuals();
+        //if
+
+        
     }
 
     public void UpdateAllVisuals()
@@ -32,6 +35,22 @@ public class UserInterfaceManager : MonoBehaviour
     }
     private void Update()
     {
-        UpdateAllVisuals();
+        mainResourceIcon.GetComponent<Animator>().SetBool("AddRes", false);
+        //UpdateAllVisuals();
+
+
+
+        if (resourceManager.GoldChange())
+        {
+
+            mainResourceIcon.GetComponent<Animator>().SetBool("AddRes", true);
+            UpdateAllVisuals();
+
+            Debug.Log("TOGGGG");
+            
+            //Update gold visual
+
+            //mainResourceIcon.GetComponent<Animator>().SetBool("AddRes", false);
+        }
     }
 }

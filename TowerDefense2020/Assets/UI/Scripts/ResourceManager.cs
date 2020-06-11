@@ -1,5 +1,7 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Security.AccessControl;
 using TMPro;
 using UnityEngine;
 
@@ -11,6 +13,9 @@ public class ResourceManager : MonoBehaviour
     [SerializeField] private string sepparator = ": ";
     [SerializeField] private int maxResource = 100;
     [SerializeField] private int maxEssence = 100;
+
+    private List<int> resChecker;
+    private int prevMainRes;
 
     public int MaxResource { get => maxResource; set => maxResource = value; }
     public int MaxEssence { get => maxEssence; set => maxEssence = value; }
@@ -33,6 +38,30 @@ public class ResourceManager : MonoBehaviour
 
     }
 
+    public bool ValuesChanged()
+    {
+        if(resChecker.Count <= 0)
+        {
+            return false;
+        }
+
+
+        return false;
+    }
+
+    public bool GoldChange()
+    {
+        if (resources.mainResource.value == prevMainRes)
+        {
+            return false;
+        }
+        else
+        {
+            prevMainRes = resources.mainResource.value;
+            return true;
+        }
+    }
+
     public _Resources GetResources()
     {
         return this.resources;
@@ -40,23 +69,23 @@ public class ResourceManager : MonoBehaviour
 
     public void UpdateMainResourceText(TextMeshProUGUI mainResourceText)
     {
-        mainResourceText.text = resources.mainResource.name + sepparator + resources.mainResource.value.ToString() + "(" + essences.mainEssence.value.ToString() +")";
+        mainResourceText.text = resources.mainResource.value.ToString() + "(" + essences.mainEssence.value.ToString() +")";
     }
     public void UpdateAoeResourceText(TextMeshProUGUI aoeResourceText)
     {
-        aoeResourceText.text = resources.aoeResource.name + sepparator + resources.aoeResource.value.ToString() + "(" + essences.aoeEssence.value.ToString() + ")";
+        aoeResourceText.text =resources.aoeResource.value.ToString() + "(" + essences.aoeEssence.value.ToString() + ")";
     }
     public void UpdateSlowResourceText(TextMeshProUGUI slowResourceText)
     {
-        slowResourceText.text = resources.slowResource.name + sepparator + resources.slowResource.value.ToString() + "(" + essences.slowEssence.value.ToString() + ")";
+        slowResourceText.text = resources.slowResource.value.ToString() + "(" + essences.slowEssence.value.ToString() + ")";
     }
     public void UpdateDotResourceText(TextMeshProUGUI dotResourceText)
     {
-        dotResourceText.text = resources.dotResource.name + sepparator + resources.dotResource.value.ToString() + "(" + essences.dotEssence.value.ToString() + ")";
+        dotResourceText.text = resources.dotResource.value.ToString() + "(" + essences.dotEssence.value.ToString() + ")";
     }
     public void UpdateRangeResourceText(TextMeshProUGUI rangeResourceText)
     {
-        rangeResourceText.text = resources.rangeResource.name + sepparator + resources.rangeResource.value.ToString() + "(" + essences.rangeEssence.value.ToString() + ")";
+        rangeResourceText.text = resources.rangeResource.value.ToString() + "(" + essences.rangeEssence.value.ToString() + ")";
     }
 }
 

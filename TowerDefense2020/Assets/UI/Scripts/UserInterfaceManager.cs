@@ -35,7 +35,6 @@ public class UserInterfaceManager : MonoBehaviour
     }
     private void Update()
     {
-        mainResourceIcon.GetComponent<Animator>().SetBool("AddRes", false);
         //UpdateAllVisuals();
 
 
@@ -43,7 +42,7 @@ public class UserInterfaceManager : MonoBehaviour
         if (resourceManager.GoldChange())
         {
 
-            mainResourceIcon.GetComponent<Animator>().SetBool("AddRes", true);
+            mainResourceIcon.GetComponent<Animator>().SetTrigger("AddResTrigger");
             UpdateAllVisuals();
 
             Debug.Log("TOGGGG");

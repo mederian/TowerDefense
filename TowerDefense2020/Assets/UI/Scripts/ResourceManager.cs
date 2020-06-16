@@ -49,17 +49,45 @@ public class ResourceManager : MonoBehaviour
         return false;
     }
 
-    public bool GoldChange()
+    public int GoldChange()
     {
-        if (resources.mainResource.value == prevMainRes)
+        if(resources.mainResource.value < prevMainRes)
         {
-            return false;
+            Debug.Log("minus one");
+            prevMainRes = resources.mainResource.value;
+            return -1;
         }
-        else
+        if(resources.mainResource.value > prevMainRes)
         {
+            prevMainRes = resources.mainResource.value;
+            Debug.Log("one");
+            return 1;
+        }
+
+        return 0;
+    }
+
+    public bool isIncrGold()
+    {
+        if (resources.mainResource.value > prevMainRes)
+        {
+            prevMainRes = resources.mainResource.value;
+            Debug.Log("one");
+            return true;
+        }
+
+        return false;
+    }
+    public bool isDecrGold()
+    {
+        if (resources.mainResource.value < prevMainRes)
+        {
+            Debug.Log("minus one");
             prevMainRes = resources.mainResource.value;
             return true;
         }
+
+        return false;
     }
 
     public _Resources GetResources()

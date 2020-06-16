@@ -39,17 +39,24 @@ public class UserInterfaceManager : MonoBehaviour
 
 
 
-        if (resourceManager.GoldChange())
+        if (resourceManager.isIncrGold())
         {
 
             mainResourceIcon.GetComponent<Animator>().SetTrigger("AddResTrigger");
             UpdateAllVisuals();
 
-            Debug.Log("TOGGGG");
+            Debug.Log("++++++");
             
             //Update gold visual
 
             //mainResourceIcon.GetComponent<Animator>().SetBool("AddRes", false);
+        }
+        else if(resourceManager.isDecrGold())
+        {
+            Debug.Log("badbad");
+            mainResourceIcon.GetComponent<Animator>().SetTrigger("SubResTrigger");
+            UpdateAllVisuals();
+           
         }
     }
 }

@@ -24,7 +24,6 @@ public class ToolTip : MonoBehaviour
     public void ShowTooltip()
     {
         panel.ShowPanel(tooltipData.GoldCost(), tooltipData.FireCost(), tooltipData.FrostCost(), tooltipData.PoisonCost(), tooltipData.ManaCost());
-
     }   
     public void HideTooltip()
     {

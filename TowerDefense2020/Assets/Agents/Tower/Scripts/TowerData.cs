@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using UnityEngine;
 
 [System.Serializable]
@@ -19,7 +20,7 @@ public class TowerData : IScore, IDamageStats, INamed, IBuffStats, ILevel
     [SerializeField] private float buffAoe;
     [SerializeField] private float buffSlow;
     [SerializeField] private float buffDot;
-
+    private ParticleSystem psystem;
     private int xp;
     private int level;
     private int kills;
@@ -35,7 +36,28 @@ public class TowerData : IScore, IDamageStats, INamed, IBuffStats, ILevel
     public float Slow { get => slow; set => slow = value; }
     public string Name { get { return name; } set { name = value; } }
 
-    public float BuffDamage { get => buffDamage; set => buffDamage = value; }
+    //public float BuffDamage { get => buffDamage; set => buffDamage = value; }
+    public float BuffDamage
+    {
+        get { return buffDamage; }
+        set { 
+            if(value > 0) // start particle effect
+            {
+                if(psystem != null)
+                {
+                    psystem.Play();
+                }
+            }
+            else //disable particle effect
+            {
+                if (psystem != null)
+                {
+                    psystem.Stop();
+                }
+            }
+            buffDamage = value; 
+        }
+    }
     public float BuffRange { get => buffRange; set => buffRange = value; }
     public float BuffFireCoolDown { get => buffFireCoolDown; set => buffFireCoolDown = value; }
     public float BuffAoe { get => buffAoe; set => buffAoe = value; }
@@ -60,5 +82,8 @@ public class TowerData : IScore, IDamageStats, INamed, IBuffStats, ILevel
     {
         return "Damage: " + Xp.ToString();
     }
-
+    public void InjectParticleSystem(ParticleSystem psys)
+    {
+        this.psystem = psys;
+    }
 }

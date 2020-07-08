@@ -48,7 +48,7 @@ public class Tower : MonoBehaviour, IDealWithResources, IAgent
             i.InjectBuffStats(towerData);
         }
 
-
+        towerData.InjectParticleSystem(this.GetComponent<ParticleSystem>());
 
     }
 

@@ -6,13 +6,13 @@ using UnityEngine;
 public class DrainedResources : MonoBehaviour//, IDealWithEssences
 {
 
-    private _Essences essences;
+
     private TextMeshProUGUI text;
     //private List<Resource> resourcesDrained;
     private string result;
     bool resourceExist = false;
-    private List<ResourceScriptableObject> resourcesDrained;
-
+    [SerializeField] private List<ResourceScriptableObject> resourcesDrained;
+    [SerializeField] private List<ResourceScriptableObject> essences;
 
 
     void Start()
@@ -20,82 +20,57 @@ public class DrainedResources : MonoBehaviour//, IDealWithEssences
         resourcesDrained = new List<ResourceScriptableObject>();
         text = this.GetComponent<TextMeshProUGUI>();
     }
-    /*
-    public List<Resource> GetResources()
+
+    public List<ResourceScriptableObject> GetResources()
     {
         return resourcesDrained;
     }
-    public void AddResource(Resource res)
+
+    public void AddResource(ResourceScriptableObject res)
     {
         resourceExist = false;
-        foreach (Resource resDrained in resourcesDrained)
+        foreach (ResourceScriptableObject resDrained in resourcesDrained)
         {
-            if (resDrained.name == res.name)
+            if (resDrained.ResourceName == res.ResourceName)
             {
-                if(res.value > 0)
+                if (res.Value > 0)
                 {
-                    resDrained.value++;
-                    res.value--;
+                    resDrained.Value++;
+                    res.Value--;
                 }
-
-                resourceExist = true;
-                UpdateText();
             }
-        }
-        if (!resourceExist)
-        {
-            if(res.value > 0)
-            {
-                Resource newRes = new Resource(res.name, 1);
-                res.value--;
-                resourcesDrained.Add(newRes);
-            }
-            UpdateText();
         }
         UpdateText();
     }
-    public void ReturnResources()
-    {
-        foreach(Resource res in resourcesDrained)
-        {
-            if(res.name == essences.mainEssence.name)
-            {
-                essences.mainEssence.value += res.value;
-            }
-            if (res.name == essences.aoeEssence.name)
-            {
-                essences.aoeEssence.value += res.value;
-            }
-            if (res.name == essences.slowEssence.name)
-            {
-                essences.slowEssence.value += res.value;
-            }
-            if (res.name == essences.dotEssence.name)
-            {
-                essences.dotEssence.value += res.value;
-            }
-            if (res.name == essences.rangeEssence.name)
-            {
-                essences.rangeEssence.value += res.value;
-            }
-        }
-        resourcesDrained.Clear();
-        UpdateText();
-    }
-
     public void UpdateText()
     {
         result = "";
-        foreach(Resource r in resourcesDrained)
+        foreach (ResourceScriptableObject r in resourcesDrained)
         {
-            if(r.value > 0)
+            if (r.Value > 0)
             {
-                result += r.name + ": " + r.value + "\n";
+                result += r.name + ": " + r.Value + "\n";
             }
-            
         }
         text.text = result;
     }
+
+    public void ReturnResources()
+    {
+        foreach (ResourceScriptableObject res in resourcesDrained)
+        {
+            foreach (ResourceScriptableObject ess in essences)
+            {
+                if (res.name == ess.name)
+                {
+                    ess.Value += res.Value;
+                    res.Value = 0;
+                }
+            }
+        }
+        UpdateText();
+    }
+
 
     public void Update()
     {
@@ -105,9 +80,4 @@ public class DrainedResources : MonoBehaviour//, IDealWithEssences
         }
     }
 
-    public void InjectEssences(_Essences essences)
-    {
-        this.essences = essences;
-    }
-    */
 }

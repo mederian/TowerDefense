@@ -22,7 +22,7 @@ public class ResourceManager : MonoBehaviour
 
     public void Awake()
     {
-        /*
+        
        foreach(IDealWithResources res in this.GetComponents<IDealWithResources>())
         {
             res.InjectResources(this.resources);
@@ -36,7 +36,7 @@ public class ResourceManager : MonoBehaviour
         {
             res.InjectEssences(this.essences);
         }
-        */
+        
     }
 
     public bool ValuesChanged()

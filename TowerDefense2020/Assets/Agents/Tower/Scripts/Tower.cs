@@ -7,6 +7,12 @@ public class Tower : MonoBehaviour, IDealWithResources, IAgent
     public TowerData towerData;
     private _Resources resources;
     [SerializeField] GameObject meshObject;
+    [SerializeField] ParticleSystem psysYellow;
+    [SerializeField] ParticleSystem psysRed;
+    [SerializeField] ParticleSystem psysGreen;
+    [SerializeField] ParticleSystem psysBlue;
+    [SerializeField] ParticleSystem psysPurple;
+
 
     public GameObject MeshObject { get => meshObject; set => meshObject = value; }
 
@@ -48,7 +54,27 @@ public class Tower : MonoBehaviour, IDealWithResources, IAgent
             i.InjectBuffStats(towerData);
         }
 
-        towerData.InjectParticleSystem(this.GetComponent<ParticleSystem>());
+        if(psysYellow != null)
+        {
+            towerData.InjectParticleSystemYellow(psysYellow);
+        }
+        if (psysRed != null)
+        {
+            towerData.InjectParticleSystemRed(psysRed);
+        }
+        if (psysBlue != null)
+        {
+            towerData.InjectParticleSystemBlue(psysBlue);
+        }
+        if (psysGreen != null)
+        {
+            towerData.InjectParticleSystemGreen(psysGreen);
+        }
+        if (psysPurple != null)
+        {
+            towerData.InjectParticleSystemPurple(psysPurple);
+        }
+
 
     }
 

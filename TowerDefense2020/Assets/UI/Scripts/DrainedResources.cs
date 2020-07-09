@@ -3,23 +3,24 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class DrainedResources : MonoBehaviour, IDealWithEssences
+public class DrainedResources : MonoBehaviour//, IDealWithEssences
 {
 
     private _Essences essences;
     private TextMeshProUGUI text;
-    private List<Resource> resourcesDrained;
+    //private List<Resource> resourcesDrained;
     private string result;
     bool resourceExist = false;
+    private List<ResourceScriptableObject> resourcesDrained;
 
 
 
     void Start()
     {
-        resourcesDrained = new List<Resource>();
+        resourcesDrained = new List<ResourceScriptableObject>();
         text = this.GetComponent<TextMeshProUGUI>();
     }
-
+    /*
     public List<Resource> GetResources()
     {
         return resourcesDrained;
@@ -108,4 +109,5 @@ public class DrainedResources : MonoBehaviour, IDealWithEssences
     {
         this.essences = essences;
     }
+    */
 }

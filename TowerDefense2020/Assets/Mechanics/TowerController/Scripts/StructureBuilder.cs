@@ -48,7 +48,7 @@ public class StructureBuilder : MonoBehaviour, IDealWithResources
     }
 
     public bool AttemptTransaction(TowerCost cost)
-    {
+    {/*
         if(cost.GoldCost > resources.mainResource.value)
         {
             return false;
@@ -77,7 +77,7 @@ public class StructureBuilder : MonoBehaviour, IDealWithResources
         resources.rangeResource.value -= cost.ManaCost;
 
 
-
+        */
         return true;
     }
 

@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Reward : MonoBehaviour, IDealWithResources
+public class Reward : MonoBehaviour//, IDealWithResources
 {
     [SerializeField] private int rewardMain;
     [SerializeField] private int rewardAoe;
@@ -12,9 +12,9 @@ public class Reward : MonoBehaviour, IDealWithResources
     [SerializeField] private int rewardRange;
 
     [SerializeField] private int xpValue = 0;
-    private List<Resource> resourceData;
-    private _Resources resources;
-
+    //private List<Resource> resourceData;
+    //private _Resources resources;
+    /*
     public void InitDrop()
     {
         resources.mainResource.value += rewardMain;
@@ -54,4 +54,5 @@ public class Reward : MonoBehaviour, IDealWithResources
     {
         this.resources = resources;
     }
+    */
 }

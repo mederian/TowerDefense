@@ -72,13 +72,13 @@ public class UpgradePlayerArmor : MonoBehaviour, IUpgradePlayerArmor, IPriced, I
         if (resources == null)
         {
             resources = GameObject.Find("UserInterface").GetComponent<ResourceManager>().GetResources();
-        }
+        }/*
         if (resources.mainResource.value >= goldCost && resources.aoeResource.value >= fireCost &&
                 resources.slowResource.value >= frostCost && resources.dotResource.value >= poisonCost &&
                 resources.rangeResource.value >= manaCost)
         {
             return true;
-        }
+        }*/
         return false;
     }
 
@@ -87,13 +87,13 @@ public class UpgradePlayerArmor : MonoBehaviour, IUpgradePlayerArmor, IPriced, I
         if (resources == null)
         {
             resources = GameObject.Find("UserInterface").GetComponent<ResourceManager>().GetResources();
-        }
+        }/*
         resources.mainResource.value -= goldCost;
         resources.aoeResource.value -= fireCost;
         resources.slowResource.value -= frostCost;
         resources.dotResource.value -= poisonCost;
         resources.rangeResource.value -= manaCost;
-    }
+    */}
 
     public void InjectResources(_Resources resources)
     {

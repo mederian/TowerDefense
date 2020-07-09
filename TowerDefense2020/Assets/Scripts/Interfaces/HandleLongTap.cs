@@ -30,7 +30,7 @@ public class HandleLongTap : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
             //this.isDown = false;
 
             // DO ButtonDrainEssence
-            drainer.Drain();
+            //drainer.Drain();
         }
     }
 

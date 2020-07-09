@@ -9,6 +9,7 @@ public class GateBuff : MonoBehaviour, IHandleBuff
     private string slowBuffResource = "Frost Essence";
     private string dotBuffResource = "Poison Essence";
     private string rangeBuffResource = "Mana Essence";
+    /*
     public void RecieveBuff(List<Resource> resources)
     {
         foreach (Resource r in resources)
@@ -54,4 +55,5 @@ public class GateBuff : MonoBehaviour, IHandleBuff
     {
         
     }
+    */
 }

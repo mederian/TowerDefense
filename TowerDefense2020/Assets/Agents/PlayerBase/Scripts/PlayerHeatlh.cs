@@ -79,13 +79,13 @@ public class PlayerHeatlh : MonoBehaviour, IHealth, IDealWithResources
         if (resources == null)
         {
             resources = GameObject.Find("UserInterface").GetComponent<ResourceManager>().GetResources();
-        }
+        }/*
         if (resources.mainResource.value >= goldCost && resources.aoeResource.value >= fireCost &&
                 resources.slowResource.value >= frostCost && resources.dotResource.value >= poisonCost &&
                 resources.rangeResource.value >= manaCost)
         {
             return true;
-        }
+        }*/
         return false;
     }
     private void SubtractCost()
@@ -94,10 +94,11 @@ public class PlayerHeatlh : MonoBehaviour, IHealth, IDealWithResources
         {
             resources = GameObject.Find("UserInterface").GetComponent<ResourceManager>().GetResources();
         }
+        /*
         resources.mainResource.value -= goldCost;
         resources.aoeResource.value -= fireCost;
         resources.slowResource.value -= frostCost;
         resources.dotResource.value -= poisonCost;
         resources.rangeResource.value -= manaCost;
-    }
+    */}
 }

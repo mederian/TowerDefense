@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TowerBuff : MonoBehaviour, IHandleBuff, IInjectBuffStats
+public class TowerBuff : MonoBehaviour, IHandleBuff//, IInjectBuffStats
 {
     private string damageBuffResource = "Gold Essence";
     private string aoeBuffResource = "Fire Essence";
@@ -73,7 +73,7 @@ public class TowerBuff : MonoBehaviour, IHandleBuff, IInjectBuffStats
             buffData.BuffRange = 0;
         }
     }
-
+    /*
     public void RecieveBuff(List<Resource> resources)
     {
         Debug.Log("RECIEVE BUFF..............................................................");
@@ -188,4 +188,5 @@ public class TowerBuff : MonoBehaviour, IHandleBuff, IInjectBuffStats
     {
         this.buffData = buffData;
     }
+    */ 
 }

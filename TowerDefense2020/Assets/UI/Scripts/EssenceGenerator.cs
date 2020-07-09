@@ -41,85 +41,85 @@ public class EssenceGenerator : MonoBehaviour, IDealWithResources, IDealWithEsse
     {
 
         if (rangeEssenceCounter > 10)
-        {
+        {/*
             if ((essences.rangeEssence.value+1) <= resourceManager.MaxEssence)
             {
                 essences.rangeEssence.value += 1;
             }
             rangeEssenceCounter = 0;
             GetComponent<UserInterfaceManager>().UpdateAllVisuals();
-        }
+        */}
         else
         {
-            rangeEssenceCounter += Time.deltaTime * (rangeEssenceGeneration * resources.rangeResource.value);
+            //rangeEssenceCounter += Time.deltaTime * (rangeEssenceGeneration * resources.rangeResource.value);
         }
     }
 
     private void GenerateDotEssence()
     {
         if (dotEssenceCounter > 10)
-        {
+        {/*
             if ((essences.dotEssence.value + 1) <= resourceManager.MaxEssence)
             {
                 essences.dotEssence.value += 1;
             }
             dotEssenceCounter = 0;
             GetComponent<UserInterfaceManager>().UpdateAllVisuals();
-        }
+        */}
         else
         {
-            dotEssenceCounter += Time.deltaTime * (dotEssenceGeneration * resources.dotResource.value);
+           // dotEssenceCounter += Time.deltaTime * (dotEssenceGeneration * resources.dotResource.value);
         }
     }
 
     private void GenerateSlowEssence()
     {
         if (slowEssenceCounter > 10)
-        {
+        {/*
             if ((essences.slowEssence.value + 1) <= resourceManager.MaxEssence)
             {
                 essences.slowEssence.value += 1;
             }
             slowEssenceCounter = 0;
             GetComponent<UserInterfaceManager>().UpdateAllVisuals();
-        }
+        */}
         else
         {
-            slowEssenceCounter += Time.deltaTime * (slowEssenceGeneration * resources.slowResource.value);
+            //slowEssenceCounter += Time.deltaTime * (slowEssenceGeneration * resources.slowResource.value);
         }
     }
 
     private void GenerateAoeEssence()
     {
         if (aoeEssenceCounter > 10)
-        {
+        {/*
             if ((essences.aoeEssence.value + 1) <= resourceManager.MaxEssence)
             {
                 essences.aoeEssence.value += 1;
             }
             aoeEssenceCounter = 0;
             GetComponent<UserInterfaceManager>().UpdateAllVisuals();
-        }
+        */}
         else
         {
-            aoeEssenceCounter += Time.deltaTime * (aoeEssenceGeneration * resources.aoeResource.value);
+            //aoeEssenceCounter += Time.deltaTime * (aoeEssenceGeneration * resources.aoeResource.value);
         }
     }
 
     public void GenerateMainEssence()
     {
         if(mainEssenceCounter > 10)
-        {
+        {/*
             if ((essences.mainEssence.value + 1) <= resourceManager.MaxEssence)
             {
                 essences.mainEssence.value += 1;
             }
             mainEssenceCounter = 0;
             GetComponent<UserInterfaceManager>().UpdateAllVisuals();
-        }
+        */}
         else
         {
-            mainEssenceCounter += Time.deltaTime * (mainEssenceGeneration * resources.mainResource.value);
+          //  mainEssenceCounter += Time.deltaTime * (mainEssenceGeneration * resources.mainResource.value);
         }
     }
 

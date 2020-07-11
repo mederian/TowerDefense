@@ -48,7 +48,12 @@ public class StructureBuilder : MonoBehaviour, IDealWithResources
     }
 
     public bool AttemptTransaction(TowerCost cost)
-    {/*
+    {
+        foreach(ResourceScriptableObject r in cost.ResourceCost)
+        {
+            //foreach(ResourceScriptableObject res in )
+        }
+        /*
         if(cost.GoldCost > resources.mainResource.value)
         {
             return false;

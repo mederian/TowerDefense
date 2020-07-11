@@ -137,6 +137,10 @@ public class _Resources
     [SerializeField] public ResourceScriptableObject slowResource;
 
     [SerializeField] public ResourceScriptableObject rangeResource;
+    public ResourceScriptableObject GetResources()
+    {
+        return null;
+    }
 }
 
 [System.Serializable]

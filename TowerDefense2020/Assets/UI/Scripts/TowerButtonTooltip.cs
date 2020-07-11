@@ -22,11 +22,11 @@ public class TowerButtonTooltip : MonoBehaviour, ITooltip
         {
             towerCost = towerObject.GetComponent<TowerCost>();
             tooltip = "Build Tower";
-            tooltip += "(" + towerCost.GoldCost + "G)";
-            tooltip += "(" + towerCost.FireCost + "F)";
-            tooltip += "(" + towerCost.PoisonCost + "P)";
-            tooltip += "(" + towerCost.FrostCost + "fr)";
-            tooltip += "(" + towerCost.ManaCost + "m)";
+            tooltip += "(" /*+ towerCost.GoldCost*/ + "G)";
+            tooltip += "(" /*+ towerCost.FireCost*/ + "F)";
+            tooltip += "(" /*+ towerCost.PoisonCost*/ + "P)";
+            tooltip += "(" /*+ towerCost.FrostCost*/ + "fr)";
+            tooltip += "(" /*+ towerCost.ManaCost*/ + "m)";
         }
         else
         {
@@ -34,26 +34,26 @@ public class TowerButtonTooltip : MonoBehaviour, ITooltip
         }
     }
 
-
+    
     public int GoldCost()
     {
-        return towerCost.GoldCost;
+        return 0; //towerCost.GoldCost.Value;
     }
     public int FireCost()
     {
-        return towerCost.FireCost;
+        return 0; // towerCost.FireCost.Value;
     }
     public int FrostCost()
     {
-        return towerCost.FrostCost;
+        return 0; //towerCost.FrostCost.Value;
     }
     public int PoisonCost()
     {
-        return towerCost.PoisonCost;
+        return 0; //towerCost.PoisonCost.Value;
     }
     public int ManaCost()
     {
-        return towerCost.ManaCost;
+        return 0; //towerCost.ManaCost.Value;
     }
 
 

@@ -5541,17 +5541,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resources:
-    mainResource: {fileID: 11400000, guid: 8786398eecbe9004a975db66239152ab, type: 2}
-    aoeResource: {fileID: 11400000, guid: 43fdb36f027cae64fb6dc7bc5767434e, type: 2}
-    dotResource: {fileID: 11400000, guid: 1eaf96f454a5d804b8cd7e991bc24f06, type: 2}
-    slowResource: {fileID: 11400000, guid: 43fdb36f027cae64fb6dc7bc5767434e, type: 2}
-    rangeResource: {fileID: 11400000, guid: 464f61d75e75e964ba82a75de6326f12, type: 2}
+    resources:
+    - {fileID: 11400000, guid: 8786398eecbe9004a975db66239152ab, type: 2}
+    - {fileID: 11400000, guid: 43fdb36f027cae64fb6dc7bc5767434e, type: 2}
+    - {fileID: 11400000, guid: 1eaf96f454a5d804b8cd7e991bc24f06, type: 2}
+    - {fileID: 11400000, guid: a700d7700c33e854aa3deabf71e1719e, type: 2}
+    - {fileID: 11400000, guid: 464f61d75e75e964ba82a75de6326f12, type: 2}
   essences:
-    mainEssence: {fileID: 11400000, guid: 688a1a88e1f005c4bb4eee5f557abcb7, type: 2}
-    aoeEssence: {fileID: 11400000, guid: c4228ed3425fdfd498b35b473c20d954, type: 2}
-    dotEssence: {fileID: 11400000, guid: 78ae7bb86572e7d42bbec9083b2b476d, type: 2}
-    slowEssence: {fileID: 11400000, guid: 89ed1fe4e3768ac4c8df5bf9f866d709, type: 2}
-    rangeEssence: {fileID: 11400000, guid: c62f6f9c3ff980d46ae06e1765fd30bd, type: 2}
+    essences:
+    - {fileID: 11400000, guid: 688a1a88e1f005c4bb4eee5f557abcb7, type: 2}
+    - {fileID: 11400000, guid: c4228ed3425fdfd498b35b473c20d954, type: 2}
+    - {fileID: 11400000, guid: 78ae7bb86572e7d42bbec9083b2b476d, type: 2}
+    - {fileID: 11400000, guid: 89ed1fe4e3768ac4c8df5bf9f866d709, type: 2}
+    - {fileID: 11400000, guid: c62f6f9c3ff980d46ae06e1765fd30bd, type: 2}
   sepparator: ': '
   maxResource: 100
   maxEssence: 20

@@ -30,8 +30,8 @@ public class StructureBuilder : MonoBehaviour, IDealWithResources
             if(Input.GetMouseButtonDown(0))
             {
                 if (currentConstruction.GetComponent<BuildStatus>().CanBuild())
-                {
-                    if (AttemptTransaction(currentConstruction.GetComponent<TowerCost>()))
+                {//
+                    if (currentConstruction.GetComponent<TowerCost>().AttemptTransaction())
                     {
                         PlaceTower();//Tower controller. add this tower
                         isUnderConstruction = false;
@@ -49,11 +49,8 @@ public class StructureBuilder : MonoBehaviour, IDealWithResources
 
     public bool AttemptTransaction(TowerCost cost)
     {
-        foreach(ResourceScriptableObject r in cost.ResourceCost)
-        {
-            //foreach(ResourceScriptableObject res in )
-        }
-        /*
+
+      /*
         if(cost.GoldCost > resources.mainResource.value)
         {
             return false;

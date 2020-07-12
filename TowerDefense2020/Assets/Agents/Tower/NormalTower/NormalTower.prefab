@@ -5062,11 +5062,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efea5fa6a42bb5c4fa8251092b81e290, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  goldCost: {fileID: 11400000, guid: 12780c07ae701bc44a8f209cebe7ffaa, type: 2}
-  fireCost: {fileID: 0}
-  frostCost: {fileID: 0}
-  poisonCost: {fileID: 0}
-  manaCost: {fileID: 0}
+  resourceCost:
+  - {fileID: 11400000, guid: 12780c07ae701bc44a8f209cebe7ffaa, type: 2}
+  playerResources:
+  - {fileID: 11400000, guid: a700d7700c33e854aa3deabf71e1719e, type: 2}
+  - {fileID: 11400000, guid: 43fdb36f027cae64fb6dc7bc5767434e, type: 2}
+  - {fileID: 11400000, guid: 8786398eecbe9004a975db66239152ab, type: 2}
+  - {fileID: 11400000, guid: 464f61d75e75e964ba82a75de6326f12, type: 2}
+  - {fileID: 11400000, guid: 1eaf96f454a5d804b8cd7e991bc24f06, type: 2}
 --- !u!114 &6597183237869611884
 MonoBehaviour:
   m_ObjectHideFlags: 0

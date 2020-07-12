@@ -128,27 +128,11 @@ public class ResourceManager : MonoBehaviour
 [System.Serializable]
 public class _Resources
 {
-    [SerializeField] public ResourceScriptableObject mainResource;
-
-    [SerializeField] public ResourceScriptableObject aoeResource;
-
-    [SerializeField] public ResourceScriptableObject dotResource;
-
-    [SerializeField] public ResourceScriptableObject slowResource;
-
-    [SerializeField] public ResourceScriptableObject rangeResource;
-    public ResourceScriptableObject GetResources()
-    {
-        return null;
-    }
+    [SerializeField] public List<ResourceScriptableObject> Resources;
 }
 
 [System.Serializable]
 public class _Essences
 {
-    [SerializeField] public ResourceScriptableObject mainEssence;
-    [SerializeField] public ResourceScriptableObject aoeEssence;
-    [SerializeField] public ResourceScriptableObject dotEssence;
-    [SerializeField] public ResourceScriptableObject slowEssence;
-    [SerializeField] public ResourceScriptableObject rangeEssence;
+    [SerializeField] public List<ResourceScriptableObject> Essences;
 }

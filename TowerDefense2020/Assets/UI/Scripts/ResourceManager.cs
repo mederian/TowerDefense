@@ -36,6 +36,10 @@ public class ResourceManager : MonoBehaviour
         {
             res.InjectEssences(this.essences);
         }
+        foreach(ResourceScriptableObject r in essences.Essences)
+        {
+            r.Value = 5;
+        }
         
     }
 
@@ -69,6 +73,7 @@ public class ResourceManager : MonoBehaviour
         return 0;
     }
 
+
     public bool isIncrGold()
     {
         /*
@@ -97,6 +102,10 @@ public class ResourceManager : MonoBehaviour
     public _Resources GetResources()
     {
         return this.resources;
+    }
+    public _Essences GetEssences()
+    {
+        return this.essences;
     }
 
     public void UpdateMainResourceText(TextMeshProUGUI mainResourceText)

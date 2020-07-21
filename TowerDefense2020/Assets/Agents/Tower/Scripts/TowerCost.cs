@@ -8,9 +8,19 @@ public class TowerCost : MonoBehaviour, ICost
     [SerializeField] private List<ResourceScriptableObject> playerResources;
     public List<ResourceScriptableObject> ResourceCost { get => resourceCost; set => resourceCost = value; }
 
+    private List<TransactionPair> transactionPairs;
 
     public bool AttemptTransaction()
     {
+        if(transactionPairs == null)
+        {
+            transactionPairs = new List<TransactionPair>();
+        }
+        else
+        {
+            transactionPairs.Clear();
+        }
+        bool transactionGo = false;
         Debug.Log("Attempting transaction");
         if (resourceCost == null)
         {
@@ -19,26 +29,54 @@ public class TowerCost : MonoBehaviour, ICost
         }
         foreach (ResourceScriptableObject costRes in resourceCost)
         {
-            //TODO: This will not work, fix it 
-            Debug.Log("NEXT: " + costRes.ResourceName);
+     
             foreach (ResourceScriptableObject playerRes in playerResources)
             {
                 if (costRes.ResourceName == playerRes.ResourceName)
                 {
-                    Debug.Log("SAME NAME GOD DAMNIT!!!");
-                    if (playerRes.Value - costRes.Value <= 0)
+          
+                    if (playerRes.Value - costRes.Value >= 0)
                     {
-                        playerRes.Value -= costRes.Value;
-                        return true;
+                        //create transaction pairs
+                        
+                        transactionPairs.Add(new TransactionPair(costRes, playerRes));               
                     }
                     else
                     {
-                        Debug.Log("Not enough mony");
+                    
                         return false;
                     }
                 }
             }
         }
+
+        foreach(TransactionPair t in transactionPairs)
+        {
+            t.CompleteTransaction();
+        }
         return true;
+    }
+}
+class TransactionPair
+{
+    ResourceScriptableObject cost;
+    ResourceScriptableObject asset;
+
+    public TransactionPair(ResourceScriptableObject cost, ResourceScriptableObject asset)
+    {
+        this.cost = cost;
+        this.asset = asset;
+    }
+    public void InitPair(ResourceScriptableObject cost, ResourceScriptableObject asset)
+    {
+        this.cost = cost;
+        this.asset = asset;
+    }
+    public void CompleteTransaction()
+    {
+        if(asset != null &&  cost != null) {
+            this.asset.Value -= this.cost.Value;
+        }
+        
     }
 }

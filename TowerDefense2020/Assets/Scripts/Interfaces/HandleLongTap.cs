@@ -8,12 +8,15 @@ public class HandleLongTap : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
     private bool isDown;
     private float downTime;
     private ButtonDrainResource drainer;
+    private bool t = true;
+    private bool f = false;
 
     public void OnPointerDown(PointerEventData eventData)
     {
         this.isDown = true;
         this.downTime = Time.realtimeSinceStartup;
-        this.drainer = GetComponent<ButtonDrainResource>();
+        
+        
     }
 
     public void OnPointerUp(PointerEventData eventData)
@@ -21,17 +24,39 @@ public class HandleLongTap : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
         this.isDown = false;
     }
 
-    void Update()
+    private void Start()
     {
-        if (!this.isDown) return;
-        if(Time.realtimeSinceStartup - this.downTime > 1f)
+        if (GetComponent<ButtonDrainResource>() == null)
         {
-            //print("Handle long tap");
-            //this.isDown = false;
-
-            // DO ButtonDrainEssence
-            //drainer.Drain();
+            Debug.Log("Did not find ButtonDrainResource..");
+        }
+        else
+        {
+            drainer = GetComponent<ButtonDrainResource>();
         }
     }
 
+    void Update()
+    {
+        if (!this.isDown)
+        {
+            if(drainer != null)
+            {
+                drainer.DrainToggle(f);
+
+            }
+            
+        }
+        if (this.isDown)
+        {
+            if (Time.realtimeSinceStartup - this.downTime > 1f)
+            {
+                //print("Handle long tap");
+                //this.isDown = false;
+                // DO ButtonDrainEssence
+                drainer.DrainToggle(t);
+            }
+        }
+        
+    }
 }

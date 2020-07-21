@@ -21,11 +21,11 @@ public class Death : MonoBehaviour, IDealWithEnemyController
 
     public void Die(IScore sourceScore)
     {
-        //GetComponent<Reward>().InitDrop();
+        GetComponent<Reward>().InitDrop();
         if(sourceScore != null)
         {
             sourceScore.Kills += 1;
-          //  sourceScore.Xp += GetComponent<Reward>().CollectXp();
+            sourceScore.Xp += GetComponent<Reward>().CollectXp();
         }
         enemyController.GetComponent<EnemyController>().UnRegisterEnemy(this.gameObject);
         deathEvent.Invoke();

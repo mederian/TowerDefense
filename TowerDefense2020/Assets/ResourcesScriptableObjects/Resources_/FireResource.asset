@@ -10,8 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a83795e5ba1b0fd4f9c8a951a37ed6ed, type: 3}
-  m_Name: GoldResource
+  m_Name: FireResource
   m_EditorClassIdentifier: 
-  ResourceName: Gold
+  ResourceName: Fire Orb
+  resId: {fileID: 11400000, guid: 24e301c6316976543a36b5a58775f87c, type: 2}
   type: 0
-  Value: 10
+  Value: 5
+  MaxValue: 100
+  icon: {fileID: 21300000, guid: 23f06fcbd9fd5704fb8489f47db3aca1, type: 3}

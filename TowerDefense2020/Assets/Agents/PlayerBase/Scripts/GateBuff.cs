@@ -9,51 +9,38 @@ public class GateBuff : MonoBehaviour, IHandleBuff
     private string slowBuffResource = "Frost Essence";
     private string dotBuffResource = "Poison Essence";
     private string rangeBuffResource = "Mana Essence";
-    /*
-    public void RecieveBuff(List<Resource> resources)
+    
+    public void RecieveBuff(List<ResourceScriptableObject> resources)
     {
-        foreach (Resource r in resources)
+        foreach (ResourceScriptableObject r in resources)
         {
             //HP
-            if (r.name == damageBuffResource)
+            if (r.ResourceName == damageBuffResource)
             {
                 this.GetComponent<DamageableComponent>().Hp += 1f;
-                //towerData.BuffDamage += r.value;
+                //towerData.BuffDamage += r.Value;
             }
             //damages enemies
-            else if (r.name == aoeBuffResource)
+            else if (r.ResourceName == aoeBuffResource)
             {
-                //towerData.BuffAoe += r.value;
+                //towerData.BuffAoe += r.Value;
             }
             //chance to freeze enemy?
-            else if (r.name == slowBuffResource)
+            else if (r.ResourceName == slowBuffResource)
             {
-                //towerData.BuffSlow += r.value;
+                //towerData.BuffSlow += r.Value;
             }
             //Healing over time
-            else if (r.name == dotBuffResource)
+            else if (r.ResourceName == dotBuffResource)
             {
-                //towerData.BuffDot += r.value;
+                //towerData.BuffDot += r.Value;
             }
             //Damage reduction?
-            else if (r.name == rangeBuffResource)
+            else if (r.ResourceName == rangeBuffResource)
             {
-                //towerData.BuffRange += r.value;
+                //towerData.BuffRange += r.Value;
             }
         }
         resources.Clear();
     }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-    */
 }

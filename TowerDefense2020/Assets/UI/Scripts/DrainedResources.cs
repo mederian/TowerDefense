@@ -17,8 +17,13 @@ public class DrainedResources : MonoBehaviour//, IDealWithEssences
 
     void Start()
     {
-        resourcesDrained = new List<ResourceScriptableObject>();
+        //resourcesDrained = new List<ResourceScriptableObject>();
         text = this.GetComponent<TextMeshProUGUI>();
+        foreach(ResourceScriptableObject resDrained in resourcesDrained)
+        {
+            resDrained.Value = 0;
+        }
+       
     }
 
     public List<ResourceScriptableObject> GetResources()
@@ -29,9 +34,10 @@ public class DrainedResources : MonoBehaviour//, IDealWithEssences
     public void AddResource(ResourceScriptableObject res)
     {
         resourceExist = false;
+
         foreach (ResourceScriptableObject resDrained in resourcesDrained)
         {
-            if (resDrained.ResourceName == res.ResourceName)
+            if (resDrained.resId.name == res.resId.name)
             {
                 if (res.Value > 0)
                 {
@@ -61,7 +67,7 @@ public class DrainedResources : MonoBehaviour//, IDealWithEssences
         {
             foreach (ResourceScriptableObject ess in essences)
             {
-                if (res.name == ess.name)
+                if (res.resId.name == ess.resId.name)
                 {
                     ess.Value += res.Value;
                     res.Value = 0;

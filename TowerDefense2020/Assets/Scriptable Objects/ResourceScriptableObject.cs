@@ -5,9 +5,10 @@ using UnityEngine.UI;
 public class ResourceScriptableObject : ScriptableObject
 {
     public string ResourceName;
+    public ResourceIDScriptableObject resId;
     public enum Type { resource, essence};
     public Type type;
     public int Value;
-    public Image icon;
- 
+    public int MaxValue;
+    public Sprite icon;
 }

@@ -26,6 +26,8 @@ public class MouseRayCaster : MonoBehaviour
         }
     }
 
+
+    //TODO: Maybe make this a coroutine with yield wait for secons, for 
     public void CheckMousePosition()
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -34,24 +36,31 @@ public class MouseRayCaster : MonoBehaviour
         {
             
             string a = hitInfo.collider.gameObject.name.ToString();
-            //Debug.Log("raycast hit : : " + a);
 
             if (hitInfo.collider.gameObject.tag == hitTag)
             {
                 Debug.Log("Hit Target MouseRayCaster script");
                 currentTarget = hitInfo.collider.gameObject;
+                if(currentTarget.GetComponent<TowerHighlighter>() != null)
+                {
+                    if(!this.GetComponent<DrainedResources>().IsEmpty)
+                    
+                    currentTarget.GetComponent<TowerHighlighter>().EssenceHoverOn();
+                }
+
             }
             else
             {
-                currentTarget = null;
+                if(currentTarget != null)
+                {
+                    if (currentTarget.GetComponent<TowerHighlighter>() != null)
+                    {
+                        
+                        currentTarget.GetComponent<TowerHighlighter>().EssenceHoverOff();
+                    }
+                    currentTarget = null;
+                }
             }
-
-
-            //rayedObject = hitInfo.collider.gameObject.tag;
-            //Debug.Log("hitinopoint: " + m.ToString());
-            //Debug.Log("Tagged as: " + rayedObject);
         }
-
-        
     }
 }

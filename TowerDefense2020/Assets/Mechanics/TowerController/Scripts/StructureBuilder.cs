@@ -35,6 +35,7 @@ public class StructureBuilder : MonoBehaviour, IDealWithResources
                     {
                         PlaceTower();//Tower controller. add this tower
                         isUnderConstruction = false;
+                        currentConstruction.gameObject.tag = "Tower";
                     }       
                 }
 

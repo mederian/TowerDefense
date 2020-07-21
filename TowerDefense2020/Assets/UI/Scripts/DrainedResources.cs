@@ -11,9 +11,11 @@ public class DrainedResources : MonoBehaviour//, IDealWithEssences
     //private List<Resource> resourcesDrained;
     private string result;
     bool resourceExist = false;
+    private bool isEmpty;
     [SerializeField] private List<ResourceScriptableObject> resourcesDrained;
     [SerializeField] private List<ResourceScriptableObject> essences;
 
+    public bool IsEmpty { get => isEmpty; set => isEmpty = value; }
 
     void Start()
     {
@@ -30,6 +32,7 @@ public class DrainedResources : MonoBehaviour//, IDealWithEssences
     {
         return resourcesDrained;
     }
+    
 
     public void AddResource(ResourceScriptableObject res)
     {
@@ -50,12 +53,21 @@ public class DrainedResources : MonoBehaviour//, IDealWithEssences
     }
     public void UpdateText()
     {
+        IsEmpty = true;
         result = "";
+        string colortext = "white";
         foreach (ResourceScriptableObject r in resourcesDrained)
         {
             if (r.Value > 0)
             {
-                result += r.name + ": " + r.Value + "\n";
+                IsEmpty = false;
+                if (r.resId.name == "Gold") colortext = "yellow";
+                else if (r.resId.name == "Fire") colortext = "red";
+                else if (r.resId.name == "Frost") colortext = "blue";
+                else if (r.resId.name == "Poison") colortext = "green";
+                else if (r.resId.name == "Mana") colortext = "purple";
+                else colortext = "white";
+                result += "<color=" + colortext + ">" + r.Value + "</color> ";
             }
         }
         text.text = result;

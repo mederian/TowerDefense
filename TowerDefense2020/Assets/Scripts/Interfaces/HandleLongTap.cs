@@ -5,6 +5,8 @@ using UnityEngine.EventSystems;
 
 public class HandleLongTap : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
+
+    [SerializeField] private float initTime;
     private bool isDown;
     private float downTime;
     private ButtonDrainResource drainer;
@@ -49,7 +51,7 @@ public class HandleLongTap : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
         }
         if (this.isDown)
         {
-            if (Time.realtimeSinceStartup - this.downTime > 1f)
+            if (Time.realtimeSinceStartup - this.downTime > initTime)
             {
                 //print("Handle long tap");
                 //this.isDown = false;

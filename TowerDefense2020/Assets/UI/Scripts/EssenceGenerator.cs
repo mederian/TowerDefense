@@ -48,7 +48,7 @@ public class EssenceGenerator : MonoBehaviour, IDealWithResources, IDealWithEsse
                         essence.Value++;
                     }
                 }
-                Debug.Log("Reg "+ essence.ResourceName + ": " + reg.ToString() + " Max: " + resource.MaxValue.ToString() + " Value: " + resource.Value.ToString() + " RegenRate: " + regenRate.ToString() + "WaitForSecond: " + reg.ToString());
+                //Debug.Log("Reg "+ essence.ResourceName + ": " + reg.ToString() + " Max: " + resource.MaxValue.ToString() + " Value: " + resource.Value.ToString() + " RegenRate: " + regenRate.ToString() + "WaitForSecond: " + reg.ToString());
                 
             }
             if (first) first = false;

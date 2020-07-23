@@ -44,7 +44,7 @@ public class MouseManager : MonoBehaviour
                         hit.collider.GetComponentInParent<Clickable>().ToggleClick();
                     }
                     lastClicked = hit.collider.gameObject;
-                    Debug.Log("Tower has been Clicked!!");
+                    //Debug.Log("Tower has been Clicked!!");
                 }
                 else
                 {

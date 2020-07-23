@@ -25,6 +25,7 @@ public class DrainedResources : MonoBehaviour//, IDealWithEssences
         {
             resDrained.Value = 0;
         }
+        UpdateText();
        
     }
 

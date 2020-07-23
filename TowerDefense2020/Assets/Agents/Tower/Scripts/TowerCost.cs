@@ -21,10 +21,10 @@ public class TowerCost : MonoBehaviour, ICost
             transactionPairs.Clear();
         }
         bool transactionGo = false;
-        Debug.Log("Attempting transaction");
+        //Debug.Log("Attempting transaction");
         if (resourceCost == null)
         {
-            Debug.Log("towercost is null");
+            //Debug.Log("towercost is null");
             return true;
         }
         foreach (ResourceScriptableObject costRes in resourceCost)

@@ -15,6 +15,7 @@ public class TowerHighlighter : MonoBehaviour
 
     void Start()
     {
+        hover = false;
         if (highlightObjectPrefab != null)
         {
             HideCircle();
@@ -81,6 +82,7 @@ public class TowerHighlighter : MonoBehaviour
     }
     private void FixedUpdate()
     {
+        Debug.Log("hover is: " + hover.ToString() + " isActive is: " + isActive.ToString());
         if (hover && isActive)
         {
             RotateObject();

@@ -12,7 +12,7 @@ public class ConstructionHighlighter : MonoBehaviour
     {
         if (animateConstruction)
         {
-            selector.transform.Rotate(0, 0, 4f);
+            selector.transform.Rotate(0, 4f, 0);
         }
     }
     public bool IsAnimateConstruction()

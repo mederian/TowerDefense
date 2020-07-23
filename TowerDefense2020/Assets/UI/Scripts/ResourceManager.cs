@@ -40,7 +40,11 @@ public class ResourceManager : MonoBehaviour
         {
             r.Value = 5;
         }
-        
+        foreach (ResourceScriptableObject r in resources.Resources)
+        {
+            r.Value = 10;
+        }
+
     }
 
     public bool ValuesChanged()

@@ -5,19 +5,21 @@ using UnityEngine;
 
 public class TowerHighlighter : MonoBehaviour
 {
-    [SerializeField] private GameObject circleObjectPrefab;
+    [SerializeField] private GameObject highlightObjectPrefab;
     [SerializeField] private GameObject rangeObjectPrefab;
     [SerializeField] private Material selectedMaterial;
     private Material originalMaterial;
     private bool hover = false;
+    private bool isActive = false;
 
 
     void Start()
     {
-        if (circleObjectPrefab != null)
+        if (highlightObjectPrefab != null)
         {
             HideCircle();
-            circleObjectPrefab.GetComponent<Renderer>().material = selectedMaterial;
+            isActive = false;
+            highlightObjectPrefab.GetComponent<Renderer>().material = selectedMaterial;
 
         }
         if(rangeObjectPrefab != null)
@@ -27,10 +29,11 @@ public class TowerHighlighter : MonoBehaviour
     }
     public void ShowCircle()
     {
-        if (circleObjectPrefab != null)
+        if (highlightObjectPrefab != null)
         {
             //TODO: Show sphere that shows the range of the tower
-            circleObjectPrefab.SetActive(true);
+            highlightObjectPrefab.SetActive(true);
+            isActive = true;
         }
         if(rangeObjectPrefab != null)
         {
@@ -57,16 +60,30 @@ public class TowerHighlighter : MonoBehaviour
         }
     }
 
+    private void RotateObject()
+    {
+        highlightObjectPrefab.transform.Rotate(0, 4f, 0);
+    }
+
+
     public void HideCircle()
     {
-        if (circleObjectPrefab != null)
+        if (highlightObjectPrefab != null)
         {
             //TODO: Hide sphere that shows the range of the tower
-            circleObjectPrefab.SetActive(false);
+            highlightObjectPrefab.SetActive(false);
+            isActive = false;
         }
         if(rangeObjectPrefab != null)
         {
             rangeObjectPrefab.SetActive(false);
+        }
+    }
+    private void FixedUpdate()
+    {
+        if (hover && isActive)
+        {
+            RotateObject();
         }
     }
 }

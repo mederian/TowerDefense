@@ -43,9 +43,16 @@ public class MouseRayCaster : MonoBehaviour
                 currentTarget = hitInfo.collider.gameObject;
                 if(currentTarget.GetComponent<TowerHighlighter>() != null)
                 {
-                    if(!this.GetComponent<DrainedResources>().IsEmpty)
-                    
-                    currentTarget.GetComponent<TowerHighlighter>().EssenceHoverOn();
+                    if (!this.GetComponent<DrainedResources>().IsEmpty)
+                    {
+                        Debug.Log("Essence is on");
+                        currentTarget.GetComponent<TowerHighlighter>().EssenceHoverOn();
+                    }
+                    else if (this.GetComponent<DrainedResources>().IsEmpty)
+                    {
+                        Debug.Log("Essence is off");
+                        currentTarget.GetComponent<TowerHighlighter>().EssenceHoverOff();
+                    }
                 }
 
             }

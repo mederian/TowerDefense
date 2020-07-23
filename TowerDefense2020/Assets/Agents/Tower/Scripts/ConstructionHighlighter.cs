@@ -5,7 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(SelectorHighlighter))]
 public class ConstructionHighlighter : MonoBehaviour
 {
-    [SerializeField] GameObject selector;
+    [SerializeField] private GameObject selector;
     private bool animateConstruction;
 
     void Update()

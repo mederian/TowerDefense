@@ -47,11 +47,11 @@ MonoBehaviour:
   enemyController: {fileID: 6469762472345824467, guid: 418fc552932b5bb48b554e6d4fe4710d, type: 3}
   waveComps:
   - enemyPrefab: {fileID: 501320304132894073, guid: d84b4503edff36349830beb8c2695510, type: 3}
-    num: 15
+    num: 30
     spawnCD: 2
   - enemyPrefab: {fileID: 501320304132894073, guid: d84b4503edff36349830beb8c2695510, type: 3}
-    num: 25
+    num: 30
     spawnCD: 1.5
-  - enemyPrefab: {fileID: 501320304132894073, guid: d84b4503edff36349830beb8c2695510, type: 3}
-    num: 35
+  - enemyPrefab: {fileID: 501320304132894073, guid: ce2f50f73f2676c4a9a905f8df137404, type: 3}
+    num: 30
     spawnCD: 1.2

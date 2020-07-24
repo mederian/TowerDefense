@@ -15,7 +15,7 @@ public class EnemyController : MonoBehaviour
 
 	public delegate void KillAction();
 	public static event KillAction OnKill;
-    private List<Resource> resourceData;
+    //private List<Resource> resourceData;
 
 //Created enemies register at enemycontroller here
     public void RegisterEnemy(GameObject go)
@@ -26,18 +26,19 @@ public class EnemyController : MonoBehaviour
             ec.InjectEnemyController(this.GetComponent<EnemyController>());
         }
         enemyCount++;
-        go.GetComponent<Reward>().InjectScoreData(resourceData);
+      //  go.GetComponent<Reward>().InjectScoreData(resourceData);
     }
 
     public void Start()
     {
 
     }
+    /*
     public void InjectResourceData(List<Resource> resourceData)
     {
         this.resourceData = resourceData;
     }
-
+    */
 
     //Here should enemies that dies or get out of game call to
     public void UnRegisterEnemy(GameObject enemy)

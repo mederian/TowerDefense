@@ -3,98 +3,93 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class DrainedResources : MonoBehaviour, IDealWithEssences
+public class DrainedResources : MonoBehaviour//, IDealWithEssences
 {
 
-    private _Essences essences;
+
     private TextMeshProUGUI text;
-    private List<Resource> resourcesDrained;
+    //private List<Resource> resourcesDrained;
     private string result;
     bool resourceExist = false;
+    private bool isEmpty;
+    [SerializeField] private List<ResourceScriptableObject> resourcesDrained;
+    [SerializeField] private List<ResourceScriptableObject> essences;
 
-
+    public bool IsEmpty { get => isEmpty; set => isEmpty = value; }
 
     void Start()
     {
-        resourcesDrained = new List<Resource>();
+        //resourcesDrained = new List<ResourceScriptableObject>();
         text = this.GetComponent<TextMeshProUGUI>();
+        foreach(ResourceScriptableObject resDrained in resourcesDrained)
+        {
+            resDrained.Value = 0;
+        }
+        UpdateText();
+       
     }
 
-    public List<Resource> GetResources()
+    public List<ResourceScriptableObject> GetResources()
     {
         return resourcesDrained;
     }
-    public void AddResource(Resource res)
+    
+
+    public void AddResource(ResourceScriptableObject res)
     {
         resourceExist = false;
-        foreach (Resource resDrained in resourcesDrained)
+
+        foreach (ResourceScriptableObject resDrained in resourcesDrained)
         {
-            if (resDrained.name == res.name)
+            if (resDrained.resId.name == res.resId.name)
             {
-                if(res.value > 0)
+                if (res.Value > 0)
                 {
-                    resDrained.value++;
-                    res.value--;
+                    resDrained.Value++;
+                    res.Value--;
                 }
-
-                resourceExist = true;
-                UpdateText();
             }
-        }
-        if (!resourceExist)
-        {
-            if(res.value > 0)
-            {
-                Resource newRes = new Resource(res.name, 1);
-                res.value--;
-                resourcesDrained.Add(newRes);
-            }
-            UpdateText();
         }
         UpdateText();
     }
-    public void ReturnResources()
-    {
-        foreach(Resource res in resourcesDrained)
-        {
-            if(res.name == essences.mainEssence.name)
-            {
-                essences.mainEssence.value += res.value;
-            }
-            if (res.name == essences.aoeEssence.name)
-            {
-                essences.aoeEssence.value += res.value;
-            }
-            if (res.name == essences.slowEssence.name)
-            {
-                essences.slowEssence.value += res.value;
-            }
-            if (res.name == essences.dotEssence.name)
-            {
-                essences.dotEssence.value += res.value;
-            }
-            if (res.name == essences.rangeEssence.name)
-            {
-                essences.rangeEssence.value += res.value;
-            }
-        }
-        resourcesDrained.Clear();
-        UpdateText();
-    }
-
     public void UpdateText()
     {
+        IsEmpty = true;
         result = "";
-        foreach(Resource r in resourcesDrained)
+        string colortext = "white";
+        foreach (ResourceScriptableObject r in resourcesDrained)
         {
-            if(r.value > 0)
+            if (r.Value > 0)
             {
-                result += r.name + ": " + r.value + "\n";
+                IsEmpty = false;
+                if (r.resId.name == "Gold") colortext = "yellow";
+                else if (r.resId.name == "Fire") colortext = "red";
+                else if (r.resId.name == "Frost") colortext = "blue";
+                else if (r.resId.name == "Poison") colortext = "green";
+                else if (r.resId.name == "Mana") colortext = "purple";
+                else colortext = "white";
+                result += "<color=" + colortext + ">" + r.Value + "</color> ";
             }
-            
         }
         text.text = result;
     }
+
+    public void ReturnResources()
+    {
+        foreach (ResourceScriptableObject res in resourcesDrained)
+        {
+            foreach (ResourceScriptableObject ess in essences)
+            {
+                if (res.resId.name == ess.resId.name)
+                {
+                    ess.Value += res.Value;
+                    res.Value = 0;
+                }
+            }
+        }
+        UpdateText();
+    }
+
 
     public void Update()
     {
@@ -104,8 +99,4 @@ public class DrainedResources : MonoBehaviour, IDealWithEssences
         }
     }
 
-    public void InjectEssences(_Essences essences)
-    {
-        this.essences = essences;
-    }
 }

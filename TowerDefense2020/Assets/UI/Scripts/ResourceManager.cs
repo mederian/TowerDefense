@@ -22,6 +22,7 @@ public class ResourceManager : MonoBehaviour
 
     public void Awake()
     {
+        
        foreach(IDealWithResources res in this.GetComponents<IDealWithResources>())
         {
             res.InjectResources(this.resources);
@@ -34,6 +35,14 @@ public class ResourceManager : MonoBehaviour
         foreach (IDealWithEssences res in this.GetComponentsInChildren<IDealWithEssences>())
         {
             res.InjectEssences(this.essences);
+        }
+        foreach(ResourceScriptableObject r in essences.Essences)
+        {
+            r.Value = 5;
+        }
+        foreach (ResourceScriptableObject r in resources.Resources)
+        {
+            r.Value = 10;
         }
 
     }
@@ -49,44 +58,52 @@ public class ResourceManager : MonoBehaviour
         return false;
     }
 
-    public int GoldChange()
+    public int ResourceChange()
     {
-        if(resources.mainResource.value < prevMainRes)
+        /*
+        foreach(ResourceScriptableObject r in resources)
         {
-            Debug.Log("minus one");
-            prevMainRes = resources.mainResource.value;
-            return -1;
+            /*
+            if (resources.mainResource.value < prevMainRes)
+            {
+                Debug.Log("minus one");
+                prevMainRes = resources.mainResource.value;
+                return -1;
+            }
+            if (resources.mainResource.value > prevMainRes)
+            {
+                prevMainRes = resources.mainResource.value;
+                Debug.Log("one");
+                return 1;
+            }
         }
-        if(resources.mainResource.value > prevMainRes)
-        {
-            prevMainRes = resources.mainResource.value;
-            Debug.Log("one");
-            return 1;
-        }
-
+        */
         return 0;
     }
 
+
     public bool isIncrGold()
     {
+        /*
         if (resources.mainResource.value > prevMainRes)
         {
             prevMainRes = resources.mainResource.value;
             Debug.Log("one");
             return true;
         }
-
+        */
         return false;
     }
     public bool isDecrGold()
     {
+        /*
         if (resources.mainResource.value < prevMainRes)
         {
             Debug.Log("minus one");
             prevMainRes = resources.mainResource.value;
             return true;
         }
-
+        */
         return false;
     }
 
@@ -94,68 +111,45 @@ public class ResourceManager : MonoBehaviour
     {
         return this.resources;
     }
+    public _Essences GetEssences()
+    {
+        return this.essences;
+    }
 
     public void UpdateMainResourceText(TextMeshProUGUI mainResourceText)
     {
-        mainResourceText.text = resources.mainResource.value.ToString() + "(" + essences.mainEssence.value.ToString() +")";
+        //mainResourceText.text = resources.mainResource.value.ToString() + "(" + essences.mainEssence.value.ToString() +")";
     }
     public void UpdateAoeResourceText(TextMeshProUGUI aoeResourceText)
     {
-        aoeResourceText.text =resources.aoeResource.value.ToString() + "(" + essences.aoeEssence.value.ToString() + ")";
+        //aoeResourceText.text =resources.aoeResource.value.ToString() + "(" + essences.aoeEssence.value.ToString() + ")";
     }
     public void UpdateSlowResourceText(TextMeshProUGUI slowResourceText)
     {
-        slowResourceText.text = resources.slowResource.value.ToString() + "(" + essences.slowEssence.value.ToString() + ")";
+        //slowResourceText.text = resources.slowResource.value.ToString() + "(" + essences.slowEssence.value.ToString() + ")";
     }
     public void UpdateDotResourceText(TextMeshProUGUI dotResourceText)
     {
-        dotResourceText.text = resources.dotResource.value.ToString() + "(" + essences.dotEssence.value.ToString() + ")";
+        //dotResourceText.text = resources.dotResource.value.ToString() + "(" + essences.dotEssence.value.ToString() + ")";
     }
     public void UpdateRangeResourceText(TextMeshProUGUI rangeResourceText)
     {
-        rangeResourceText.text = resources.rangeResource.value.ToString() + "(" + essences.rangeEssence.value.ToString() + ")";
+        //rangeResourceText.text = resources.rangeResource.value.ToString() + "(" + essences.rangeEssence.value.ToString() + ")";
     }
 }
 
 
 
-[System.Serializable]
-public class Resource
-{
-    public Resource(string name, int value)
-    {
-        this.name = name;
-        this.value = value;
-    }
-    public Resource()
-    {
 
-    }
-    [SerializeField] public string name;
-    [SerializeField] public int value;
-
-}
 
 [System.Serializable]
 public class _Resources
 {
-    [SerializeField] public Resource mainResource;
-
-    [SerializeField] public Resource aoeResource;
-
-    [SerializeField] public Resource dotResource;
-
-    [SerializeField] public Resource slowResource;
-
-    [SerializeField] public Resource rangeResource;
+    [SerializeField] public List<ResourceScriptableObject> Resources;
 }
 
 [System.Serializable]
 public class _Essences
 {
-    public Resource mainEssence;
-    public Resource aoeEssence;
-    public Resource dotEssence;
-    public Resource slowEssence;
-    public Resource rangeEssence;
+    [SerializeField] public List<ResourceScriptableObject> Essences;
 }

@@ -5,23 +5,26 @@ using UnityEngine;
 
 public class Reward : MonoBehaviour, IDealWithResources
 {
-    [SerializeField] private int rewardMain;
-    [SerializeField] private int rewardAoe;
-    [SerializeField] private int rewardDot;
-    [SerializeField] private int rewardSlow;
-    [SerializeField] private int rewardRange;
-
+    [SerializeField] private List<ResourceScriptableObject> rewards;
+    
     [SerializeField] private int xpValue = 0;
-    private List<Resource> resourceData;
-    private _Resources resources;
 
+    private _Resources resources;
     public void InitDrop()
     {
-        resources.mainResource.value += rewardMain;
-        resources.aoeResource.value += rewardAoe;
-        resources.dotResource.value += rewardDot;
-        resources.slowResource.value += rewardSlow;
-        resources.rangeResource.value += rewardRange;
+        if(rewards != null)
+        {
+            foreach (ResourceScriptableObject reward in rewards)
+            {
+                foreach(ResourceScriptableObject res in resources.Resources)
+                {
+                    if(reward.resId.name == res.resId.name)
+                    {
+                        res.Value += reward.Value;
+                    }
+                }
+            }
+        }
     }
 
     public int CollectXp()
@@ -39,19 +42,20 @@ public class Reward : MonoBehaviour, IDealWithResources
         //Debug.Log("Collect xp: " + ((int)r).ToString());
         return (int)r;
     }
-
+/*
     public void InjectScoreData(List<Resource> resourceData)
     {
         this.resourceData = resourceData;
     }
-
+    */
     public void Start()
     {
         this.InjectResources(GameObject.Find("UserInterface").GetComponent<ResourceManager>().GetResources());
-
     }
+ 
     public void InjectResources(_Resources resources)
     {
         this.resources = resources;
     }
+
 }

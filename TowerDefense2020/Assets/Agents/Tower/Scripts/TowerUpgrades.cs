@@ -28,65 +28,65 @@ public class TowerUpgrades : MonoBehaviour, IInjectTowerData, IDealWithResources
     private void UpgradeRange()
     {
         if (clickable.IsOn)
-        {
+        {/*
             if (resources.rangeResource.value >= rangeUpgradeCost)
             {
                 towerData.Range += 0.2f;
                 detailView.SetTowerDataStats(towerData);
                 resources.rangeResource.value -= rangeUpgradeCost;
-            }
+            }*/
         }
     }
 
     private void UpgradeSlow()
     {
         if (clickable.IsOn)
-        {
+        {/*
             if (resources.slowResource.value >= rangeUpgradeCost)
             {
                 towerData.Slow += 0.2f;
                 detailView.SetTowerDataStats(towerData);
                 resources.slowResource.value -= slowUpgradeCost;
-            }
+            }*/
         }
     }
 
     private void UpgradeDot()
     {
         if (clickable.IsOn)
-        {
+        {/*
             if (resources.dotResource.value >= dotUpgradeCost)
             {
                 towerData.Dot += 0.2f;
                 detailView.SetTowerDataStats(towerData);
                 resources.dotResource.value -= dotUpgradeCost;
-            }
+            }*/
         }
     }
 
     private void UpgradeAoe()
     {
         if (clickable.IsOn)
-        {
+        {/*
             if (resources.aoeResource.value >= aoeUpgradeCost)
             {
                 towerData.Aoe += 0.2f;
                 detailView.SetTowerDataStats(towerData);
                 resources.aoeResource.value -= aoeUpgradeCost;
-            }
+            }*/
         }
     }
 
     private void UpgradeDamage()
     {
         if (clickable.IsOn)
-        {
+        {/*
             if (resources.mainResource.value >= damageUpgradeCost)
             {            
                 towerData.Damage += 0.2f;
                 detailView.SetTowerDataStats(towerData);
                 resources.mainResource.value -= damageUpgradeCost;
-            }
+            }*/
         }
     }
 

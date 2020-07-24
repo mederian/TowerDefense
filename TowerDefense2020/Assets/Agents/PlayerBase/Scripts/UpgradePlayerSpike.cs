@@ -47,6 +47,7 @@ public class UpgradePlayerSpike : MonoBehaviour, IPriced, IDealWithResources
 
     public bool isAffordable()
     {
+        /*
         if (resources == null)
         {
             resources = GameObject.Find("UserInterface").GetComponent<ResourceManager>().GetResources();
@@ -57,6 +58,7 @@ public class UpgradePlayerSpike : MonoBehaviour, IPriced, IDealWithResources
         {
             return true;
         }
+        */
         return false;
     }
 
@@ -66,11 +68,13 @@ public class UpgradePlayerSpike : MonoBehaviour, IPriced, IDealWithResources
         {
             resources = GameObject.Find("UserInterface").GetComponent<ResourceManager>().GetResources();
         }
+        /*
         resources.mainResource.value -= goldCost;
         resources.aoeResource.value -= fireCost;
         resources.slowResource.value -= frostCost;
         resources.dotResource.value -= poisonCost;
         resources.rangeResource.value -= manaCost;
+ */
     }
 
     public void InjectResources(_Resources resources)

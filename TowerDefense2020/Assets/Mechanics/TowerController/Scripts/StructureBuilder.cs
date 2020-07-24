@@ -30,11 +30,12 @@ public class StructureBuilder : MonoBehaviour, IDealWithResources
             if(Input.GetMouseButtonDown(0))
             {
                 if (currentConstruction.GetComponent<BuildStatus>().CanBuild())
-                {
-                    if (AttemptTransaction(currentConstruction.GetComponent<TowerCost>()))
+                {//
+                    if (currentConstruction.GetComponent<TowerCost>().AttemptTransaction())
                     {
                         PlaceTower();//Tower controller. add this tower
                         isUnderConstruction = false;
+                        currentConstruction.gameObject.tag = "Tower";
                     }       
                 }
 
@@ -49,6 +50,8 @@ public class StructureBuilder : MonoBehaviour, IDealWithResources
 
     public bool AttemptTransaction(TowerCost cost)
     {
+
+      /*
         if(cost.GoldCost > resources.mainResource.value)
         {
             return false;
@@ -77,7 +80,7 @@ public class StructureBuilder : MonoBehaviour, IDealWithResources
         resources.rangeResource.value -= cost.ManaCost;
 
 
-
+        */
         return true;
     }
 

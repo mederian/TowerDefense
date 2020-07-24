@@ -10,37 +10,37 @@ public class PlayerBuff : MonoBehaviour, IHandleBuff
     private string slowBuffResource = "Frost Essence";
     private string dotBuffResource = "Poison Essence";
     private string rangeBuffResource = "Mana Essence";
-    public void RecieveBuff(List<Resource> resources)
+    
+    public void RecieveBuff(List<ResourceScriptableObject> resources)
     {
-        foreach (Resource r in resources)
+        foreach (ResourceScriptableObject r in resources)
         {
 
-            if (r.name == damageBuffResource)
+            if (r.ResourceName == damageBuffResource)
             {
                 Debug.Log("dropping buffses on player");
             }
 
-            else if (r.name == aoeBuffResource)
+            else if (r.ResourceName == aoeBuffResource)
             {
                 //towerData.BuffAoe += r.value;
             }
 
-            else if (r.name == slowBuffResource)
+            else if (r.ResourceName == slowBuffResource)
             {
                 //towerData.BuffSlow += r.value;
             }
 
-            else if (r.name == dotBuffResource)
+            else if (r.ResourceName == dotBuffResource)
             {
                 //towerData.BuffDot += r.value;
             }
 
-            else if (r.name == rangeBuffResource)
+            else if (r.ResourceName == rangeBuffResource)
             {
                 //towerData.BuffRange += r.value;
             }
         }
         //resources.Clear();
     }
-
 }

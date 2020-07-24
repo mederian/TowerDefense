@@ -26,6 +26,7 @@ public class TowerBuff : MonoBehaviour, IHandleBuff, IInjectBuffStats
 
     public void Update()
     {
+      
         if(aoeBuffCooldown > 0)
         {
             aoeBuffCooldown -= Time.deltaTime;
@@ -72,9 +73,10 @@ public class TowerBuff : MonoBehaviour, IHandleBuff, IInjectBuffStats
         {
             buffData.BuffRange = 0;
         }
+      
     }
 
-    public void RecieveBuff(List<Resource> resources)
+    public void RecieveBuff(List<ResourceScriptableObject> resources)
     {
         Debug.Log("RECIEVE BUFF..............................................................");
         //TODO: Extract this to separate script that inherit function from interface
@@ -82,16 +84,16 @@ public class TowerBuff : MonoBehaviour, IHandleBuff, IInjectBuffStats
         if (GetComponent<ConstructionStatus>().IsConstructionComplete())
         {
             Debug.Log("iscontstuctioncomplete");
-            foreach (Resource r in resources)
+            foreach (ResourceScriptableObject r in resources)
             {
-                if(r.name == damageBuffResource)
+                if(r.ResourceName == damageBuffResource)
                 {
-                    Debug.Log("Attempt buff dmg: " + r.value.ToString());
+                    Debug.Log("Attempt buff dmg: " + r.Value.ToString());
                     int buffValue;
                     int overflow = (int)buffData.BuffDamage;
              
-                    if (r.value > buffCap) buffValue = buffCap;
-                    else buffValue = r.value;
+                    if (r.Value > buffCap) buffValue = buffCap;
+                    else buffValue = r.Value;
                     Debug.Log("Buff value1: " + buffValue.ToString());
                     buffValue -= overflow;
 
@@ -100,19 +102,19 @@ public class TowerBuff : MonoBehaviour, IHandleBuff, IInjectBuffStats
                     {
                         buffData.BuffDamage += buffValue;
                         damageBuffCooldown = towerBuffCooldown;
-                        r.value -= buffValue;
+                        r.Value -= buffValue;
                         Debug.Log("Buffvalue vas over 0");
                     }
  
                 }
-                else if (r.name == aoeBuffResource)
+                else if (r.ResourceName == aoeBuffResource)
                 {
                     Debug.Log("Attempt buff, aoe ");
                     int buffValue;
                     int overflow = (int)buffData.BuffAoe;
 
-                    if (r.value > buffCap) buffValue = buffCap;
-                    else buffValue = r.value;
+                    if (r.Value > buffCap) buffValue = buffCap;
+                    else buffValue = r.Value;
 
                     buffValue -= overflow;
 
@@ -120,16 +122,16 @@ public class TowerBuff : MonoBehaviour, IHandleBuff, IInjectBuffStats
                     {
                         buffData.BuffAoe += buffValue;
                         aoeBuffCooldown = towerBuffCooldown;
-                        r.value -= buffValue;
+                        r.Value -= buffValue;
                     }
                 }
-                else if (r.name == slowBuffResource)
+                else if (r.ResourceName == slowBuffResource)
                 {
                     int buffValue;
                     int overflow = (int)buffData.BuffSlow;
 
-                    if (r.value > buffCap) buffValue = buffCap;
-                    else buffValue = r.value;
+                    if (r.Value > buffCap) buffValue = buffCap;
+                    else buffValue = r.Value;
 
                     buffValue -= overflow;
 
@@ -137,16 +139,16 @@ public class TowerBuff : MonoBehaviour, IHandleBuff, IInjectBuffStats
                     {
                         buffData.BuffSlow += buffValue;
                         slowBuffCooldown = towerBuffCooldown;
-                        r.value -= buffValue;
+                        r.Value -= buffValue;
                     }
                 }
-                else if (r.name == dotBuffResource)
+                else if (r.ResourceName == dotBuffResource)
                 {
                     int buffValue;
                     int overflow = (int)buffData.BuffDot;
 
-                    if (r.value > buffCap) buffValue = buffCap;
-                    else buffValue = r.value;
+                    if (r.Value > buffCap) buffValue = buffCap;
+                    else buffValue = r.Value;
 
                     buffValue -= overflow;
 
@@ -154,17 +156,17 @@ public class TowerBuff : MonoBehaviour, IHandleBuff, IInjectBuffStats
                     {
                         buffData.BuffDot += buffValue;
                         dotBuffCooldown = towerBuffCooldown;
-                        r.value -= buffValue;
+                        r.Value -= buffValue;
                     }
 
                 }
-                else if (r.name == rangeBuffResource)
+                else if (r.ResourceName == rangeBuffResource)
                 {
                     int buffValue;
                     int overflow = (int)buffData.BuffRange;
 
-                    if (r.value > buffCap) buffValue = buffCap;
-                    else buffValue = r.value;
+                    if (r.Value > buffCap) buffValue = buffCap;
+                    else buffValue = r.Value;
 
                     buffValue -= overflow;
 
@@ -172,7 +174,7 @@ public class TowerBuff : MonoBehaviour, IHandleBuff, IInjectBuffStats
                     {
                         buffData.BuffRange += buffValue;
                         rangeBuffCooldown = towerBuffCooldown;
-                        r.value -= buffValue;
+                        r.Value -= buffValue;
                     }
                 }
             }

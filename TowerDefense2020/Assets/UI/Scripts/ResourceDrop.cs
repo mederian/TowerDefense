@@ -21,10 +21,12 @@ public class ResourceDrop : MonoBehaviour
         {
             if(mouseRayCaster.GetCurrentTarget() != null)
             {
-                List<Resource> res = this.GetComponent<DrainedResources>().GetResources();
+              
+                List<ResourceScriptableObject> res = this.GetComponent<DrainedResources>().GetResources();
                 Debug.Log("try dropping" + mouseRayCaster.GetCurrentTarget().name);
                 mouseRayCaster.GetCurrentTarget().GetComponent<IHandleBuff>().RecieveBuff(res);
                 this.GetComponent<DrainedResources>().UpdateText();
+
             }
         }
     }

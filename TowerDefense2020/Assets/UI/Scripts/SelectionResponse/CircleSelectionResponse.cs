@@ -21,16 +21,4 @@ public class CircleSelectionResponse : MonoBehaviour, ISelectionResponse
             circle.ShowCircle();
         }
     }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

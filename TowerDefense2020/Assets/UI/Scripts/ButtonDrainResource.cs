@@ -7,12 +7,14 @@ using UnityEngine.UI;
 //This is attached to an gameobject/ui obj that can have its values drained
 public class ButtonDrainResource : MonoBehaviour, IDealWithEssences
 {
+    [SerializeField] ResourceScriptableObject drainableEssence;
     private _Essences essences;     //Injected player essence pool
-    //private _Essences currentEssences; //currently drained essences
+    private _Essences currentEssences; //currently drained essences
 
     public DrainedResources drainedResources; //User interface
-    private Resource actingResource;
-    private float drainTime = 10f;
+    //private Resource actingResource;
+    private float drainWait = 5f;
+    private bool isDraining;
     private float currentDrainTime = 0;
     private string buttonName;
     private int buttonEssenceValue;
@@ -22,37 +24,38 @@ public class ButtonDrainResource : MonoBehaviour, IDealWithEssences
     {
         Vector3 buttonPosition = this.transform.position;
         Vector3 realSpacePosition = Camera.main.ScreenToWorldPoint(new Vector3(buttonPosition.x, buttonPosition.y, Camera.main.nearClipPlane));
-        this.actingResource = this.DefineEssence(this.name);   
+        isDraining = false;
+        drainWait = 10f * Time.deltaTime;
+    }
+    
+    public void DrainToggle(bool status)
+    {
+        if (status)
+        {
+            if (!isDraining)
+            {
+                isDraining = true;
+                StartCoroutine(DrainEssenceOverTime(this.drainableEssence));
+            }
+            //start draingin
+        }
+        else if (!status)
+        {
+            isDraining = false;
+            //stop draining
+        }  
     }
 
-    public void Drain()
+    private IEnumerator DrainEssenceOverTime(ResourceScriptableObject essence)
     {
-        drainedResources.AddResource(actingResource);
-    }
 
-    Resource DefineEssence(string essenceName)
-    {
-        if(essenceName == "GoldButton")
+        while (isDraining)
         {
-            return essences.mainEssence;
+
+            drainedResources.AddResource(essence);
+
+            yield return new WaitForSeconds(drainWait);
         }
-        else if(essenceName == "FireOrbButton")
-        {
-            return essences.aoeEssence;
-        }
-        else if (essenceName == "PoisonVialButton")
-        {
-            return essences.dotEssence;
-        }
-        else if (essenceName == "FrostShardButton")
-        {
-            return essences.slowEssence;
-        }
-        else if (essenceName == "ManaCrystalButton")
-        {
-            return essences.rangeEssence;
-        }
-        return null;
     }
 
     public void InjectEssences(_Essences essences)

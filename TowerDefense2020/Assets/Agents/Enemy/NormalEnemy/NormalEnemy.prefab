@@ -111,11 +111,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af861cd24a5ff574e856fc439117cf69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rewardMain: 1
-  rewardAoe: 1
-  rewardDot: 1
-  rewardSlow: 1
-  rewardRange: 1
+  rewards:
+  - {fileID: 11400000, guid: 66ef8b2f471bf6148bca14a2ab5d594d, type: 2}
   xpValue: 12
 --- !u!114 &3535523059592732168
 MonoBehaviour:

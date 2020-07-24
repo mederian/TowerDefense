@@ -6,12 +6,15 @@ public class MouseRayCaster : MonoBehaviour
 {
     [SerializeField] private LayerMask buildLayer;
     [SerializeField] private string hitTag;
+    WaitForSeconds waitBetweenMouseCheck = new WaitForSeconds(0.1f);
     private GameObject currentTarget;
+    Ray ray;
+    RaycastHit hitInfo;
 
-    // Update is called once per frame
-    void Update()
+
+    private void Start()
     {
-        CheckMousePosition();   
+        StartCoroutine(CheckMousePosition());
     }
 
     public GameObject GetCurrentTarget()
@@ -26,32 +29,43 @@ public class MouseRayCaster : MonoBehaviour
         }
     }
 
-    public void CheckMousePosition()
+    IEnumerator CheckMousePosition()
     {
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hitInfo;
-        if (Physics.Raycast(ray, out hitInfo, 100.0f))
+
+        while (true)
         {
-            
-            string a = hitInfo.collider.gameObject.name.ToString();
-            //Debug.Log("raycast hit : : " + a);
+            ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-            if (hitInfo.collider.gameObject.tag == hitTag)
+            if (Physics.Raycast(ray, out hitInfo, 100.0f))
             {
-                Debug.Log("Hit Target MouseRayCaster script");
-                currentTarget = hitInfo.collider.gameObject;
+                if (hitInfo.collider.gameObject.tag == hitTag)
+                {
+                    currentTarget = hitInfo.collider.gameObject;
+                    if (currentTarget.GetComponent<TowerHighlighter>() != null)
+                    {
+                        if (!this.GetComponent<DrainedResources>().IsEmpty)
+                        {
+                            currentTarget.GetComponent<TowerHighlighter>().EssenceHoverOn();
+                        }
+                        else if (this.GetComponent<DrainedResources>().IsEmpty)
+                        {
+                            currentTarget.GetComponent<TowerHighlighter>().EssenceHoverOff();
+                        }
+                    }
+                }
+                else
+                {
+                    if (currentTarget != null)
+                    {
+                        if (currentTarget.GetComponent<TowerHighlighter>() != null)
+                        {
+                            currentTarget.GetComponent<TowerHighlighter>().EssenceHoverOff();
+                        }
+                        currentTarget = null;
+                    }
+                }
             }
-            else
-            {
-                currentTarget = null;
-            }
-
-
-            //rayedObject = hitInfo.collider.gameObject.tag;
-            //Debug.Log("hitinopoint: " + m.ToString());
-            //Debug.Log("Tagged as: " + rayedObject);
+            yield return waitBetweenMouseCheck;
         }
-
-        
     }
 }

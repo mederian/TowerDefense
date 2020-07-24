@@ -47,7 +47,7 @@ public class TowerHighlighter : MonoBehaviour
     {
         if (hover)
         {
-            Debug.Log("Hover is tuned off");
+            //Debug.Log("Hover is tuned off");
             hover = false;
         }
     }
@@ -56,7 +56,7 @@ public class TowerHighlighter : MonoBehaviour
     {
         if (!hover)
         {
-            Debug.Log("Hover is turned on");
+            //Debug.Log("Hover is turned on");
             hover = true;
         }
     }
@@ -82,7 +82,7 @@ public class TowerHighlighter : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        Debug.Log("hover is: " + hover.ToString() + " isActive is: " + isActive.ToString());
+        //Debug.Log("hover is: " + hover.ToString() + " isActive is: " + isActive.ToString());
         if (hover && isActive)
         {
             RotateObject();

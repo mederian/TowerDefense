@@ -58,20 +58,24 @@ public class ResourceManager : MonoBehaviour
         return false;
     }
 
-    public int GoldChange()
+    public int ResourceChange()
     {
         /*
-        if(resources.mainResource.value < prevMainRes)
+        foreach(ResourceScriptableObject r in resources)
         {
-            Debug.Log("minus one");
-            prevMainRes = resources.mainResource.value;
-            return -1;
-        }
-        if(resources.mainResource.value > prevMainRes)
-        {
-            prevMainRes = resources.mainResource.value;
-            Debug.Log("one");
-            return 1;
+            /*
+            if (resources.mainResource.value < prevMainRes)
+            {
+                Debug.Log("minus one");
+                prevMainRes = resources.mainResource.value;
+                return -1;
+            }
+            if (resources.mainResource.value > prevMainRes)
+            {
+                prevMainRes = resources.mainResource.value;
+                Debug.Log("one");
+                return 1;
+            }
         }
         */
         return 0;

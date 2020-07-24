@@ -1696,6 +1696,7 @@ MonoBehaviour:
   resource: {fileID: 11400000, guid: a700d7700c33e854aa3deabf71e1719e, type: 2}
   essence: {fileID: 11400000, guid: 89ed1fe4e3768ac4c8df5bf9f866d709, type: 2}
   UIText: {fileID: 6524524153821303657}
+  mainResourceIcon: {fileID: 644510052546013596}
   EssenceBar: {fileID: 3577799568047022968}
 --- !u!1 &1748843775733026004
 GameObject:
@@ -2534,6 +2535,7 @@ MonoBehaviour:
   resource: {fileID: 11400000, guid: 43fdb36f027cae64fb6dc7bc5767434e, type: 2}
   essence: {fileID: 11400000, guid: c4228ed3425fdfd498b35b473c20d954, type: 2}
   UIText: {fileID: 6524524154494648737}
+  mainResourceIcon: {fileID: 5430174525917581749}
   EssenceBar: {fileID: 8642939052736532456}
 --- !u!1 &2265135388837656444
 GameObject:
@@ -3453,6 +3455,7 @@ MonoBehaviour:
   resource: {fileID: 11400000, guid: 464f61d75e75e964ba82a75de6326f12, type: 2}
   essence: {fileID: 11400000, guid: c62f6f9c3ff980d46ae06e1765fd30bd, type: 2}
   UIText: {fileID: 6524524153388661565}
+  mainResourceIcon: {fileID: 2265135388837656444}
   EssenceBar: {fileID: 1638589826242705634}
 --- !u!1 &3418783309367350856
 GameObject:
@@ -5723,6 +5726,7 @@ MonoBehaviour:
   resource: {fileID: 11400000, guid: 1eaf96f454a5d804b8cd7e991bc24f06, type: 2}
   essence: {fileID: 11400000, guid: 78ae7bb86572e7d42bbec9083b2b476d, type: 2}
   UIText: {fileID: 6524524153870357596}
+  mainResourceIcon: {fileID: 4008843939047227283}
   EssenceBar: {fileID: 3760946125449557793}
 --- !u!1 &5423457410070553675
 GameObject:
@@ -7680,6 +7684,7 @@ MonoBehaviour:
   resource: {fileID: 11400000, guid: 8786398eecbe9004a975db66239152ab, type: 2}
   essence: {fileID: 11400000, guid: 688a1a88e1f005c4bb4eee5f557abcb7, type: 2}
   UIText: {fileID: 6524524153336269946}
+  mainResourceIcon: {fileID: 6914119360036928722}
   EssenceBar: {fileID: 1878320237008026742}
 --- !u!1 &6524524152987292767
 GameObject:

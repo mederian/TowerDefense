@@ -38,9 +38,9 @@ public class EnemyWalker : MonoBehaviour
     public void DecreaseSpeed(float modifier)
     {
         float m = modifier / 10;
-        if (speed <= (m + minSpeed))
+        if (speed <= (m - minSpeed))
         {
-            minSpeed = .015f;
+            speed = minSpeed;
         }
         else
         {

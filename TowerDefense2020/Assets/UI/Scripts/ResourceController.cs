@@ -6,15 +6,17 @@ using UnityEngine.UI;
 
 public class ResourceController : MonoBehaviour
 {
-    [SerializeField] ResourceScriptableObject resource;
-    [SerializeField] ResourceScriptableObject essence;
-    [SerializeField] TextMeshProUGUI UIText;
+    [SerializeField] private ResourceScriptableObject resource;
+    [SerializeField] private ResourceScriptableObject essence;
+    [SerializeField] private TextMeshProUGUI UIText;
+    [SerializeField] private GameObject mainResourceIcon;
     [SerializeField] Image EssenceBar;
+    private int prevValue;
     // Start is called before the first frame update
     void Start()
     {
         UIText.text = resource.Value.ToString();
-
+        prevValue = resource.Value;
 
         EssenceBar.fillAmount = EssenceToBar();
 
@@ -24,7 +26,22 @@ public class ResourceController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        UIText.text = resource.Value.ToString();
+        if(resource.Value != prevValue)
+        {
+            UIText.text = resource.Value.ToString();
+            //TODO: Animate the resource 
+            if(prevValue < resource.Value)
+            {
+                mainResourceIcon.GetComponent<Animator>().SetTrigger("AddResTrigger");
+            }
+            else if(prevValue > resource.Value)
+            {
+                mainResourceIcon.GetComponent<Animator>().SetTrigger("SubResTrigger");
+            }
+            
+            prevValue = resource.Value;
+        }
+        
 
 
         EssenceBar.fillAmount = EssenceToBar();

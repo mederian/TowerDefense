@@ -3,32 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(PlayerHeatlh))]
-public class UpgradePlayerHealth : MonoBehaviour, IPriced, IDealWithResources
+public class UpgradePlayerHealth : MonoBehaviour
 {
     private float upgradeValue = 1;
     private PlayerHeatlh playerHealth;
-    [SerializeField] private int goldCost = 5;
-    [SerializeField] private int manaCost = 5;
-    [SerializeField] private int frostCost = 5;
-    [SerializeField] private int poisonCost = 5;
-    [SerializeField] private int fireCost = 5;
-    private _Resources resources;
+    private TransactionHandler transactionHandler;
+    [SerializeField] private List<ResourceScriptableObject> resourceCost;
 
-    public int GoldCost { get => goldCost; set => goldCost = value; }
-    public int ManaCost { get => manaCost; set => manaCost = value; }
-    public int FrostCost { get => frostCost; set => frostCost = value; }
-    public int PoisonCost { get => poisonCost; set => poisonCost = value; }
-    public int FireCost { get => fireCost; set => fireCost = value; }
-
-    // Start is called before the first frame update
     void Start()
     {
         playerHealth = this.GetComponent<PlayerHeatlh>();
+
+        transactionHandler = this.GetComponent<TransactionHandler>();
     }
     public void UpgradeStartHP()
     {
         if (isAffordable())
         {
+
             playerHealth.StartHp += upgradeValue;
             playerHealth.CurrentHp += upgradeValue;
             playerHealth.HealthController.SetMaxHP(playerHealth.StartHp);
@@ -53,38 +45,22 @@ public class UpgradePlayerHealth : MonoBehaviour, IPriced, IDealWithResources
 
     public bool isAffordable()
     {
-        /*
-        if (resources == null)
+        if(transactionHandler != null)
         {
-            resources = GameObject.Find("UserInterface").GetComponent<ResourceManager>().GetResources();
+            if (transactionHandler.ValidateResourceTransaction(resourceCost))
+            {
+                return true;
+            }
         }
-        if (resources.mainResource.value >= goldCost && resources.aoeResource.value >= fireCost &&
-                resources.slowResource.value >= frostCost && resources.dotResource.value >= poisonCost &&
-                resources.rangeResource.value >= manaCost)
-        {
-            return true;
-        }
-        */
+
         return false;
     }
 
     public void SubtractCost()
     {
-        if (resources == null)
+        if(transactionHandler != null)
         {
-            resources = GameObject.Find("UserInterface").GetComponent<ResourceManager>().GetResources();
+            transactionHandler.SubtractCost(resourceCost);
         }
-        /*
-        resources.mainResource.value -= goldCost;
-        resources.aoeResource.value -= fireCost;
-        resources.slowResource.value -= frostCost;
-        resources.dotResource.value -= poisonCost;
-        resources.rangeResource.value -= manaCost;
-        */
-    }
-
-    public void InjectResources(_Resources resources)
-    {
-        this.resources = resources;
     }
 }

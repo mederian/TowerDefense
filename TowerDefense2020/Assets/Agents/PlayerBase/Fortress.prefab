@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 1160414110504191459}
   - component: {fileID: 5049190764243082721}
   - component: {fileID: 5663335544345914293}
+  - component: {fileID: 6554435777206330202}
   m_Layer: 0
   m_Name: Fortress
   m_TagString: Untagged
@@ -132,11 +133,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d918c09719d0dea47b14aeb40d09bd30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  goldCost: 6
-  manaCost: 5
-  frostCost: 0
-  poisonCost: 0
-  fireCost: 2
+  resourceCost:
+  - {fileID: 11400000, guid: 1aac64fe64ce67a4ba8c52d1a42fabbf, type: 2}
 --- !u!114 &7160802483491831739
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -221,6 +219,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selectedMaterial: {fileID: 0}
+--- !u!114 &6554435777206330202
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6393895529329395432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1795ebaffbdffe459117fa9940dd839, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  resources:
+  - {fileID: 11400000, guid: 43fdb36f027cae64fb6dc7bc5767434e, type: 2}
+  - {fileID: 11400000, guid: a700d7700c33e854aa3deabf71e1719e, type: 2}
+  - {fileID: 11400000, guid: 8786398eecbe9004a975db66239152ab, type: 2}
+  - {fileID: 11400000, guid: 464f61d75e75e964ba82a75de6326f12, type: 2}
+  - {fileID: 11400000, guid: 1eaf96f454a5d804b8cd7e991bc24f06, type: 2}
+  essences:
+  - {fileID: 11400000, guid: c4228ed3425fdfd498b35b473c20d954, type: 2}
+  - {fileID: 11400000, guid: 89ed1fe4e3768ac4c8df5bf9f866d709, type: 2}
+  - {fileID: 11400000, guid: 688a1a88e1f005c4bb4eee5f557abcb7, type: 2}
+  - {fileID: 11400000, guid: c62f6f9c3ff980d46ae06e1765fd30bd, type: 2}
+  - {fileID: 11400000, guid: 78ae7bb86572e7d42bbec9083b2b476d, type: 2}
 --- !u!1001 &5336080641596799370
 PrefabInstance:
   m_ObjectHideFlags: 0

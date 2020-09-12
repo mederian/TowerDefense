@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(PlayerHeatlh))]
-public class UpgradePlayerHealth : MonoBehaviour, IPriced, IDealWithResources
+public class UpgradePlayerHealth : MonoBehaviour
 {
     private float upgradeValue = 1;
     private PlayerHeatlh playerHealth;
@@ -12,7 +12,10 @@ public class UpgradePlayerHealth : MonoBehaviour, IPriced, IDealWithResources
     [SerializeField] private int frostCost = 5;
     [SerializeField] private int poisonCost = 5;
     [SerializeField] private int fireCost = 5;
-    private _Resources resources;
+
+
+    [SerializeField] List<ResourceScriptableObject> cost;
+    private TransactionHandler transactions;
 
     public int GoldCost { get => goldCost; set => goldCost = value; }
     public int ManaCost { get => manaCost; set => manaCost = value; }
@@ -24,6 +27,7 @@ public class UpgradePlayerHealth : MonoBehaviour, IPriced, IDealWithResources
     void Start()
     {
         playerHealth = this.GetComponent<PlayerHeatlh>();
+        transactions = this.GetComponent<TransactionHandler>();
     }
     public void UpgradeStartHP()
     {
@@ -34,8 +38,6 @@ public class UpgradePlayerHealth : MonoBehaviour, IPriced, IDealWithResources
             playerHealth.HealthController.SetMaxHP(playerHealth.StartHp);
             playerHealth.HealthController.SetHP(playerHealth.CurrentHp);
             playerHealth.UpdateHealthText();
-
-            SubtractCost();
         }
     }
 
@@ -53,38 +55,20 @@ public class UpgradePlayerHealth : MonoBehaviour, IPriced, IDealWithResources
 
     public bool isAffordable()
     {
-        /*
-        if (resources == null)
+        if(transactions != null)
         {
-            resources = GameObject.Find("UserInterface").GetComponent<ResourceManager>().GetResources();
+            if (transactions.ValidateResourceTransaction(cost))
+            {
+                transactions.CompleteTransaction(cost);
+            }
         }
-        if (resources.mainResource.value >= goldCost && resources.aoeResource.value >= fireCost &&
-                resources.slowResource.value >= frostCost && resources.dotResource.value >= poisonCost &&
-                resources.rangeResource.value >= manaCost)
-        {
-            return true;
-        }
-        */
+
         return false;
     }
 
     public void SubtractCost()
     {
-        if (resources == null)
-        {
-            resources = GameObject.Find("UserInterface").GetComponent<ResourceManager>().GetResources();
-        }
-        /*
-        resources.mainResource.value -= goldCost;
-        resources.aoeResource.value -= fireCost;
-        resources.slowResource.value -= frostCost;
-        resources.dotResource.value -= poisonCost;
-        resources.rangeResource.value -= manaCost;
-        */
+        
     }
 
-    public void InjectResources(_Resources resources)
-    {
-        this.resources = resources;
-    }
 }

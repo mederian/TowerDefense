@@ -4,21 +4,19 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour {
 
-
-	public float spawnBreak = 0.01f;
+    private WaitForSeconds waveWait;
+	[SerializeField] private float spawnBreak = 0.01f;
+    [SerializeField] private float waveBreak;
+	[SerializeField] private GameObject waveDisplay;
 	public GameObject enemyController;
 	GameObject go;
 
-
-
-
 	public List<WaveComponent> waveComps;
-	// Use this for initialization
 	void Start () {
-
-		//Loop every component:
 		WaveComponent wc = waveComps[0];
 		StartCoroutine(WaveRoutine());
+        waveWait = new WaitForSeconds(waveBreak);
+
 	}
 
 	public void AddWave()
@@ -33,7 +31,8 @@ public class EnemySpawner : MonoBehaviour {
 	IEnumerator WaveRoutine(){
 		yield return new WaitForSeconds(spawnBreak);
 		foreach(WaveComponent wc in waveComps){
-			for(int i = 0; i < wc.num; i++){
+			waveDisplay.GetComponent<WaveDisplay>().InitNewWave();
+			for (int i = 0; i < wc.numberOfMobs; i++){
 				
 				wc.spawned++;
 				go = Instantiate(wc.enemyPrefab, this.transform.position, this.transform.rotation) as GameObject;
@@ -47,20 +46,23 @@ public class EnemySpawner : MonoBehaviour {
 				else{
 					Debug.LogWarning("EnemyController is missing, spawned enemies is placed outside gameobject");	
 				}
-				yield return new WaitForSeconds(wc.spawnCD);
+				yield return new WaitForSeconds(wc.SpawnCooldown);
 
 			}
-		}
+			
+			yield return waveWait;
+        }
+        
 
-	}
+    }
 
 }
 [System.Serializable]
 public class WaveComponent
 {
 	public GameObject enemyPrefab;
-	public int num = 25;
-	public float spawnCD = 2f;
+	public int numberOfMobs = 25;
+	public float SpawnCooldown = 2f;
 	[System.NonSerialized]
 	public int spawned = 0;
 }

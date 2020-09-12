@@ -458,6 +458,22 @@ PrefabInstance:
       propertyPath: enemyController
       value: 
       objectReference: {fileID: 8684330471691372370}
+    - target: {fileID: 4235427363944073112, guid: dbd86155a2e4336469a45741e122debd, type: 3}
+      propertyPath: waveBreak
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4235427363944073112, guid: dbd86155a2e4336469a45741e122debd, type: 3}
+      propertyPath: waveComps.Array.data[0].numberOfMobs
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4235427363944073112, guid: dbd86155a2e4336469a45741e122debd, type: 3}
+      propertyPath: waveComps.Array.data[1].numberOfMobs
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4235427363944073112, guid: dbd86155a2e4336469a45741e122debd, type: 3}
+      propertyPath: waveDisplay
+      value: 
+      objectReference: {fileID: 1777869935}
     - target: {fileID: 6423296684492102690, guid: dbd86155a2e4336469a45741e122debd, type: 3}
       propertyPath: m_Name
       value: EnemySpawner
@@ -2126,6 +2142,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 59.599, y: 46.549, z: -52.79}
+--- !u!1 &1777869935 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5456886837479386617, guid: cb646044f41ee534b869db8551dd5595, type: 3}
+  m_PrefabInstance: {fileID: 1259929394}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1878562588 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5049190764243082721, guid: e1f88757beeebb847b1ef76da7564377, type: 3}

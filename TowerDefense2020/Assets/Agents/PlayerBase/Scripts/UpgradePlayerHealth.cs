@@ -59,16 +59,12 @@ public class UpgradePlayerHealth : MonoBehaviour
         {
             if (transactions.ValidateResourceTransaction(cost))
             {
+                
                 transactions.CompleteTransaction(cost);
+                return true;
             }
         }
 
         return false;
     }
-
-    public void SubtractCost()
-    {
-        
-    }
-
 }

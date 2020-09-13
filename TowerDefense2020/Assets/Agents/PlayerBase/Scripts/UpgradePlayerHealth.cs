@@ -3,25 +3,73 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(PlayerHeatlh))]
-public class UpgradePlayerHealth : MonoBehaviour
+public class UpgradePlayerHealth : MonoBehaviour, IUpgradePlayer
 {
     private float upgradeValue = 1;
     private PlayerHeatlh playerHealth;
-    [SerializeField] private int goldCost = 5;
-    [SerializeField] private int manaCost = 5;
-    [SerializeField] private int frostCost = 5;
-    [SerializeField] private int poisonCost = 5;
-    [SerializeField] private int fireCost = 5;
-
-
     [SerializeField] List<ResourceScriptableObject> cost;
     private TransactionHandler transactions;
 
-    public int GoldCost { get => goldCost; set => goldCost = value; }
-    public int ManaCost { get => manaCost; set => manaCost = value; }
-    public int FrostCost { get => frostCost; set => frostCost = value; }
-    public int PoisonCost { get => poisonCost; set => poisonCost = value; }
-    public int FireCost { get => fireCost; set => fireCost = value; }
+
+    public List<ResourceScriptableObject> Cost()
+    {
+        return this.cost;
+    }
+    public int GoldCost()
+    {
+        foreach (ResourceScriptableObject r in cost)
+        {
+            if (r.resId.name == "Gold")
+            {
+                return r.Value;
+            }
+        }
+        return 0;
+    }
+    public int ManaCost()
+    {
+        foreach (ResourceScriptableObject r in cost)
+        {
+            if (r.resId.name == "Mana")
+            {
+                return r.Value;
+            }
+        }
+        return 0;
+    }
+    public int FrostCost()
+    {
+        foreach (ResourceScriptableObject r in cost)
+        {
+            if (r.resId.name == "Frost")
+            {
+                return r.Value;
+            }
+        }
+        return 0;
+    }
+    public int PoisonCost()
+    {
+        foreach (ResourceScriptableObject r in cost)
+        {
+            if (r.resId.name == "Poison")
+            {
+                return r.Value;
+            }
+        }
+        return 0;
+    }
+    public int FireCost()
+    {
+        foreach (ResourceScriptableObject r in cost)
+        {
+            if (r.resId.name == "Fire")
+            {
+                return r.Value;
+            }
+        }
+        return 0;
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -55,11 +103,11 @@ public class UpgradePlayerHealth : MonoBehaviour
 
     public bool isAffordable()
     {
-        if(transactions != null)
+        if (transactions != null)
         {
             if (transactions.ValidateResourceTransaction(cost))
             {
-                
+
                 transactions.CompleteTransaction(cost);
                 return true;
             }

@@ -3,10 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class FortressTooltip : MonoBehaviour, ITooltip
-{
-
-
+{ 
     [SerializeField] private GameObject fortress;
+    private List<ResourceScriptableObject> resourceCostSO;
     private UpgradePlayerArmor playerArmor;
     private UpgradePlayerHealth playerHealth;
     private UpgradePlayerSpike playerSpike;
@@ -22,7 +21,7 @@ public class FortressTooltip : MonoBehaviour, ITooltip
     // Start is called before the first frame update
     void Start()
     {
-
+        
         if(fortress.GetComponent<UpgradePlayerArmor>() != null)
             playerArmor = fortress.GetComponent<UpgradePlayerArmor>();
 
@@ -33,11 +32,15 @@ public class FortressTooltip : MonoBehaviour, ITooltip
             playerSpike = fortress.GetComponent<UpgradePlayerSpike>();
     }
 
+    public List<ResourceScriptableObject> GetCostList()
+    {
+        return null;
+    }
     public int GoldCost()
     {
         if (updateType == PropertyType.Heal)
-        {
-            return playerHealth.GoldCost;
+        { 
+            return playerHealth.GoldCost();
         }
         else if (updateType == PropertyType.Armor)
         {
@@ -57,7 +60,7 @@ public class FortressTooltip : MonoBehaviour, ITooltip
     {
         if (updateType == PropertyType.Heal)
         {
-            return playerHealth.FireCost;
+            return playerHealth.FireCost();
         }
         else if (updateType == PropertyType.Armor)
         {
@@ -77,7 +80,7 @@ public class FortressTooltip : MonoBehaviour, ITooltip
     {
         if (updateType == PropertyType.Heal)
         {
-            return playerHealth.FrostCost;
+            return playerHealth.FrostCost();
         }
         else if (updateType == PropertyType.Armor)
         {
@@ -97,7 +100,7 @@ public class FortressTooltip : MonoBehaviour, ITooltip
     {
         if (updateType == PropertyType.Heal)
         {
-            return playerHealth.PoisonCost;
+            return playerHealth.PoisonCost();
         }
         else if (updateType == PropertyType.Armor)
         {
@@ -117,7 +120,7 @@ public class FortressTooltip : MonoBehaviour, ITooltip
     {
         if (updateType == PropertyType.Heal)
         {
-            return playerHealth.ManaCost;
+            return playerHealth.ManaCost();
         }
         else if (updateType == PropertyType.Armor)
         {

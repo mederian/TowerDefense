@@ -5,9 +5,11 @@ using UnityEngine;
 [RequireComponent(typeof(PlayerHeatlh))]
 public class UpgradePlayerHealth : MonoBehaviour, IUpgradePlayer
 {
+    [SerializeField] List<ResourceScriptableObject> cost;
+    //[SerializeField] 
     private float upgradeValue = 1;
     private PlayerHeatlh playerHealth;
-    [SerializeField] List<ResourceScriptableObject> cost;
+    
     private TransactionHandler transactions;
 
 
